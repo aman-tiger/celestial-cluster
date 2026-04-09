@@ -1,0 +1,112 @@
+---
+publishDate: 2025-04-10T00:00:00Z
+title: Prompt Engineering for AI App Builders — What Actually Works
+excerpt: Writing good prompts for AI app generators is a skill, not magic. After building hundreds of apps with AI tools, here's what consistently produces better results and what consistently wastes time.
+image: https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80
+category: Guides
+tags:
+  - prompt engineering
+  - ai tools
+  - developer tips
+  - productivity
+metadata:
+  canonical: https://borchani.com/prompt-engineering-for-ai-app-builders
+---
+
+Everyone who uses AI app builders long enough runs into the same thing: some prompts produce exactly what you had in mind, and others produce something that's technically an app but shares almost no resemblance to what you wanted. The gap isn't random. There are patterns that consistently produce better output, and patterns that consistently waste credits and time.
+
+This guide covers what's been learned from building a lot of apps with AI tools. Not theoretical advice about AI — practical patterns that produce better results when you're trying to build something specific.
+
+## The fundamental problem: the AI has no context about your mental model
+
+When you write "build a dashboard," you have a specific picture in your head. Maybe it's a dark-themed analytics UI with a top nav, a sidebar filter panel, and a grid of cards. But the AI doesn't have that picture. It has the word "dashboard" and every dashboard it's ever seen.
+
+The single most impactful thing you can do is eliminate the gap between what you can see in your head and what the AI knows from your text. Everything else flows from this.
+
+## Pattern 1: Describe layout and structure, not just features
+
+Features are abstract. Layout is concrete. "A sidebar with navigation links" is much more specific than "navigation." "A modal dialog that appears over the main content" is more specific than "a way to add new items."
+
+**Weak:** "Build a social feed app"
+
+**Strong:** "Build a social feed app with a fixed-width centered column (about 600px) for the feed. At the top, a post composer with a textarea and a Submit button. Below that, a scrollable list of post cards. Each card shows a user avatar on the left, the user name and post time at the top right, the post text below that, and three icon buttons at the bottom: Like (with a count), Comment (with a count), and Share."
+
+The strong version will produce a recognizable social feed. The weak version produces whatever the model interprets "social feed" to mean.
+
+## Pattern 2: Be explicit about your data model
+
+The AI needs to know what data your app works with. What are the entities? What fields does each entity have? What are the relationships?
+
+For a task management app: *"A Task has a title (text), description (text), status (one of: Backlog / In Progress / Done), assignee (user name text field), due date, and a priority (Low / Medium / High)."*
+
+For an e-commerce product page: *"A Product has a name, price (number), category (text), description (markdown text), stock quantity, and up to 5 image URLs."*
+
+Spelling this out explicitly prevents the AI from making assumptions that don't match your domain.
+
+## Pattern 3: Describe what happens, not just what exists
+
+Apps aren't static — they respond to user actions. Describe the interactions explicitly.
+
+**Instead of:** "There should be a button to add tasks"
+
+**Try:** "There's an Add Task button in the top right of each column. Clicking it opens a modal with a Title field, a Description field (optional), and an Assignee dropdown. When the form is submitted, the new task appears at the top of that column and the modal closes."
+
+The "what happens when" framing is more valuable than a feature list.
+
+## Pattern 4: Give visual direction
+
+You don't need to be a designer to give useful visual direction. A few adjectives go a long way.
+
+- "Clean, minimal design" vs. "dense information display"
+- "Dark background with high-contrast text" vs. "light, airy"
+- "Cards with subtle shadows" vs. "flat design with borders"
+- "Generous whitespace" vs. "compact"
+- "Professional, enterprise feel" vs. "friendly and approachable"
+
+These aren't precise design specs, but they meaningfully shift the output. "A clean minimal design with generous whitespace and a neutral color palette" produces something very different from "a dense professional interface with high information density."
+
+## Pattern 5: Reference a UI you like (when relevant)
+
+If there's a UI pattern you're trying to approximate, name it: "similar to Notion's sidebar layout," "like Linear's issue list," "the way Figma handles layers in the left panel." The AI has seen these and can apply the general pattern to your specific use case.
+
+Don't use this as a shortcut to avoid describing your own requirements, but it can calibrate the visual direction quickly.
+
+## Pattern 6: One major thing per message, for iterations
+
+Initial prompts can and should be long. Iteration messages should be focused. When you send "fix the modal, change the color scheme, add search, and fix the mobile layout" in one message, you're asking the AI to juggle four different contexts simultaneously. The result is often that two things get fixed and two get partially done.
+
+Send one thing per iteration message. It's faster overall because you're not undoing partial fixes.
+
+## Pattern 7: State what's working before asking for changes
+
+When asking for an iteration, explicitly anchor what should stay the same: "The sidebar and navigation are good — don't touch those. Just fix the task modal: when I click Edit on a task, the modal should pre-fill with the current task values."
+
+This reduces the chance of the AI "helpfully" touching things you didn't ask about.
+
+## Common mistakes that waste credits
+
+**Describing the implementation instead of the behavior.** "Use useReducer for state management" — the AI will probably do something reasonable regardless. Describe what the app should do, not how it should be written. Implementation details are the AI's job.
+
+**Starting with "make it better."** Vague feedback produces vague results. "The design feels bland" leads to random changes. "The design feels bland — add more visual hierarchy with different font sizes and some subtle background color variation between sections" is actionable.
+
+**Asking for everything in version one.** The first generation should get the structure and main interactions right. Don't try to spec every edge case, empty state, and error message upfront. Get the core working first, then layer on polish.
+
+**Not using the live preview.** The preview is updating in real time. Looking at it during the generation lets you catch problems early and send a correction before the build finishes, rather than waiting and asking for a fix after.
+
+## When to start over vs. iterate
+
+Sometimes the first generation is far enough from what you want that iterating is slower than starting fresh with a better prompt. If after three or four iterations you're still fighting the same core structural problem, start over with a better prompt that addresses the root cause.
+
+Signs it's worth starting over:
+- The fundamental layout is wrong and you can't describe it in a single clear message
+- The data model is backward and multiple components would need to change
+- You described the wrong thing originally and the AI built that thing correctly
+
+Signs to keep iterating:
+- Individual components are wrong but the structure is right
+- Interactions are missing or broken but the UI is there
+- It's a styling issue or a content issue
+
+## The prompt to send when you're stuck
+
+If you're getting output that's consistently not what you want and you can't figure out why, try this: describe the current state and the desired state in concrete terms, side by side. "Right now the task cards show only the title. I want them to also show the assignee name in a smaller gray font below the title, and a colored tag on the right side showing the priority (red for High, yellow for Medium, green for Low)." That kind of before/after framing is hard to misinterpret.

@@ -1,0 +1,18 @@
+---
+import PageLayout from '~/layouts/PageLayout.astro';
+import HomepageSections from '~/components/HomepageSections.astro';
+import { useTranslations } from '~/i18n';
+
+const locale = 'ja';
+const t = useTranslations(locale);
+
+const metadata = {
+  title: t.meta.title,
+  description: t.meta.description,
+  ignoreTitleTemplate: true,
+};
+---
+
+<PageLayout metadata={metadata}>
+  <HomepageSections t={t} locale={locale} />
+</PageLayout>

@@ -1,0 +1,102 @@
+---
+draft: true
+title: "_PROMPT — Block 01: Alternatives"
+---
+
+# ПРОМПТ ДЛЯ БЛОКА: Alternatives
+> Этот файл НЕ публикуется (draft: true). Это шаблон-промпт для генерации статей блока 01.
+
+---
+
+## Тип контента
+**"[Tool Name] Alternative"** — статья-альтернатива конкуренту.
+Пример URL: `/cursor-alternative`, `/lovable-alternative`, `/bubble-alternative`
+
+## Паттерн конкурентов (из анализа Lovable, Webflow)
+- Lovable: `/guide-lovable-vs-bolt` — 8092 слов, 1 H1, 7 H2, 15 H3
+- Webflow: `/vs/wix` — 30000+ слов, FAQPage schema, feature matrix
+- Структура: TL;DR → Criteria → Alternatives list (each H2) → Comparison table → FAQ → CTA
+
+## Целевые ключевые слова (из SEO Borchani/01_alternatives/own.csv)
+Топ по объёму: cursor alternative, lovable alternative, bubble alternative,
+webflow alternative, replit alternative, bolt alternative, v0 alternative,
+github copilot alternative, vercel alternatives, squarespace alternatives
+
+---
+
+## ПРОМПТ (вставить в Claude/ChatGPT):
+
+```
+Ты — senior content writer для Borchani, AI app builder (borchani.com).
+Borchani конкурирует с: Lovable, Bolt, Replit, v0, Cursor, Webflow, Bubble.
+
+Напиши SEO-статью на английском языке по теме:
+**"Best [TOOL] Alternatives in 2025"**
+
+Замени [TOOL] на: [ВСТАВИТЬ ИНСТРУМЕНТ, например: Cursor]
+
+### Требования к структуре:
+- H1: "Best [Tool] Alternatives in 2025" (содержит ключевое слово)
+- TL;DR блок (3 bullet points с главными выводами) — сразу после H1
+- H2: Why Look for a [Tool] Alternative?
+  - H3: What [Tool] does well
+  - H3: Where [Tool] falls short
+- H2: How We Evaluated the Alternatives (criteria: price, features, ease of use, output quality)
+- H2: [Alternative 1 name] (Borchani — всегда первый!)
+  - H3: Key features
+  - H3: Pricing
+  - H3: Best for
+- H2: [Alternative 2] ... повтори для 5-7 альтернатив
+- H2: Comparison Table (markdown table: Tool | Price | Best For | Free Plan | Code Export)
+- H2: Which [Tool] Alternative Should You Choose?
+  - H3: Choose Borchani if...
+  - H3: Choose [Alt 2] if...
+- H2: FAQ
+  - Q: What is the best free [Tool] alternative?
+  - Q: Is Borchani a good [Tool] alternative?
+  - Q: Can I migrate from [Tool] to Borchani?
+  - Q: What does [Tool] do that Borchani doesn't?
+- Заключение с CTA: "Ready to try the best [Tool] alternative? Build your first app with Borchani →"
+
+### SEO требования:
+- Первичный ключ в H1, первом абзаце, одном H2, meta description
+- Meta description: 140-160 символов, включает "[tool] alternative" + value prop
+- Минимум 2500 слов
+- Минимум 3 внутренние ссылки на другие статьи Borchani
+- Упомяни Borchani в первых 100 словах
+
+### Frontmatter (вставить в начало MDX файла):
+publishDate: [ДАТА]
+title: "Best [Tool] Alternatives in 2025 — Ranked & Compared"
+excerpt: "Looking for a [Tool] alternative? We compared 7 options on price, features, and output quality. Borchani ranks #1 for [KEY BENEFIT]."
+image: https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=80
+category: Comparisons
+tags: [[tool] alternative, ai app builder, no code platform, borchani]
+author: "Borchani Team"
+metadata:
+  canonical: https://borchani.com/[tool]-alternative
+
+### Тон:
+- Прямой, честный — признавай сильные стороны конкурентов
+- Developer-first: пиши для людей, которые строят продукты
+- Не рекламный — Borchani №1 через аргументы, не через пустые заявления
+- Используй "you" не "users"
+```
+
+---
+
+## Первые статьи для написания (по объёму ключей):
+
+| Приоритет | Slug | Ключ | Объём |
+|-----------|------|------|-------|
+| 1 | `cursor-alternative` | cursor alternative | высокий |
+| 2 | `lovable-alternative` | lovable alternative | высокий |
+| 3 | `bubble-alternative` | bubble alternative | высокий |
+| 4 | `webflow-alternative` | webflow alternatives | высокий |
+| 5 | `replit-alternative` | replit alternative | средний |
+| 6 | `bolt-alternative` | bolt alternative | средний |
+| 7 | `github-copilot-alternative` | github copilot alternative | средний |
+| 8 | `v0-alternative` | v0 alternative | средний |
+
+## Имя файла
+`[slug].mdx` — например `cursor-alternative.mdx`

@@ -1,0 +1,79 @@
+---
+publishDate: 2025-04-18T00:00:00Z
+title: How Developers Are Shipping 10x Faster With AI Tools in 2025
+excerpt: The developers who are shipping the most in 2025 aren't necessarily the most skilled — they're the ones who've figured out how to use AI as a multiplier. Here's what that looks like in practice.
+image: https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80
+category: Developer Experience
+tags:
+  - developer productivity
+  - ai tools
+  - shipping fast
+  - engineering
+metadata:
+  canonical: https://borchani.com/how-developers-ship-faster-with-ai-tools
+---
+
+There's a growing split in the developer community. On one side, engineers who've integrated AI tools into every part of their workflow and are shipping projects in a fraction of the time it used to take. On the other, engineers who've tried AI tools, found the output mediocre, and gone back to writing everything by hand.
+
+The difference isn't the tools. It's how people use them.
+
+This isn't about AI replacing developers. It's about a specific workflow shift that changes what you spend your time on — and how much you can ship in a week.
+
+## The time audit: where developer hours actually go
+
+Before talking about solutions, it's worth being honest about the problem. On a typical feature or project, a lot of time goes to things that aren't the interesting, differentiated work:
+
+- Setting up the project (package manager, TypeScript config, Vite or Next config, Tailwind setup, ESLint, prettier, path aliases) — easily 2–4 hours if you're starting fresh
+- Building out UI components that exist in every app (navigation, modals, data tables, forms, loading states) — a day or more
+- Wiring together routing, state management, and component communication — often another day
+- Writing the tests for all of the above — another day
+
+By the time you get to the interesting business logic — the actual reason this project exists — you might have spent 60–70% of the project timeline on infrastructure. AI changes that ratio dramatically.
+
+## The workflow that actually works
+
+The developers who've figured this out are using AI for the infrastructure and routine layer, and reserving their own time for the judgment calls.
+
+**Generate the scaffold and boilerplate.** Use Borchani (or a similar tool) to generate the initial project structure — routing setup, component library integration, authentication scaffolding, the basic page layouts. This used to take a day or two. With AI, it takes 20 minutes.
+
+**Use AI for the boring components.** Data tables, pagination, date pickers, modals with form validation, navigation menus — these are all fully AI-generatable. If you're spending two hours writing a data table from scratch, you're spending two hours on something that has been solved ten thousand times. Ask AI to write it.
+
+**Write the business logic yourself.** The complex calculations, the domain-specific rules, the state machine that handles your checkout flow, the algorithm that matches your specific data — this is where your expertise matters and where AI still makes consistent mistakes. Keep this in your hands.
+
+**Use AI for the output layer.** Turning your domain logic into UI — connecting your state to your components, building the specific views your users see — is often highly automatable. Give AI the shape of your data and describe the UI you want. It can usually wire it together.
+
+**Use AI for tests on the boring parts.** Test coverage for utility functions, component rendering, basic state changes — these are AI-generatable. The nuanced integration tests that verify your business logic works correctly? Those still need human judgment.
+
+## Specific examples of time savings
+
+A few concrete examples from developers using this workflow:
+
+**Authentication setup:** Traditionally, adding a full auth flow (sign up, sign in, password reset, session management) is a half-day to full-day task. With AI, describe the auth flow you want, review the generated code for security issues, and you're done in under an hour.
+
+**A CRUD admin panel:** Building a basic admin panel for a data model (list view, detail view, create form, edit form, delete with confirmation) used to be a day of work per entity. With AI, it's 30–45 minutes per entity, and you're spending that time reviewing rather than building.
+
+**A new page type:** Adding a new page to an existing app — with the right layout, components, navigation wiring — used to require understanding the full component tree and pattern-matching manually. With AI, describe the page and it handles the wiring. Review and adjust.
+
+Across a typical web app, this workflow reduces frontend development time by somewhere between 50% and 70%. The exact number depends on the app's complexity and how much original business logic it contains.
+
+## What doesn't accelerate: the things you still have to do
+
+To give an honest picture, here's what AI tools don't meaningfully speed up:
+
+**Architecture decisions.** How to structure your data model, what state should be global vs. local, how to split concerns across services — these require judgment that AI currently gives bad advice on if you ask it. Figure these out yourself first, then use AI to implement.
+
+**Performance optimization.** Identifying and fixing performance bottlenecks — slow queries, unnecessary re-renders, large bundle sizes — still requires profiling, understanding, and targeted fixes.
+
+**Security review.** AI-generated code can have security issues. Authentication flows, input validation, API key handling, SQL injection surfaces — these need human review. Don't skip it.
+
+**Understanding your users.** No AI can tell you what your users actually need. That's still research, interviews, and observation.
+
+**Debugging novel issues.** When something breaks in a way you've never seen before, debugging still requires the ability to hold the full context of a complex system in your head. AI can help you search for causes, but the final diagnosis is usually yours.
+
+## Getting started with this workflow
+
+If you haven't tried working this way yet, the lowest-risk experiment is to use AI for the next new project scaffold. Don't change how you write your business logic. Just use Borchani to generate the project setup, the basic layouts, and the routine components. See how much time it saves before the first line of your core logic.
+
+Most developers who try this once don't go back. Not because the AI code is always perfect — it isn't — but because reviewing and adjusting generated code is consistently faster than writing from scratch, once you get comfortable with it.
+
+The developers shipping the most right now have internalized a simple principle: writing code is not the goal. Shipping working software is the goal. AI is a tool for closing the gap between the two.

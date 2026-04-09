@@ -24,6 +24,15 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 export default defineConfig({
   output: 'static',
 
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es', 'ru', 'ja', 'ko'],
+    routing: {
+      prefixDefaultLocale: false,
+      redirectToDefaultLocale: false,
+    },
+  },
+
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -72,7 +81,7 @@ export default defineConfig({
   ],
 
   image: {
-    domains: ['cdn.pixabay.com'],
+    domains: ['cdn.pixabay.com', 'images.unsplash.com'],
   },
 
   markdown: {

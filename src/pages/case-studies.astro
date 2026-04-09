@@ -1,0 +1,296 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Stats from '~/components/widgets/Stats.astro';
+
+const metadata = {
+  title: 'Case Studies — Real Projects Built with Borchani',
+  description:
+    'See how founders, developers, and product teams use Borchani to ship faster. Five real stories, real results.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Case Studies"
+    title="What people are building with Borchani"
+    subtitle="Five stories from developers, founders, and ops teams who used Borchani to ship things that would have taken weeks."
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Average time saved', amount: '68%' },
+      { title: 'Projects shipped', amount: '10K+' },
+      { title: 'Avg. build to deploy', amount: '< 1 day' },
+      { title: 'User satisfaction', amount: '4.9/5' },
+    ]}
+  />
+
+  <!-- Case 1 ******************* -->
+
+  <Content
+    isReversed
+    tagline="Case study 01"
+    title="SaaS MVP in 2 days instead of 6 weeks"
+    items={[
+      {
+        title: 'The situation',
+        description:
+          'Alex Romero had been sketching the same SaaS idea for four months. A subscription management tool for small businesses — track plans, billing cycles, usage limits, and renewals in one place. Every time he priced out development, the estimates came back at $15,000–$25,000 and 6–8 weeks. He kept waiting.',
+      },
+      {
+        title: 'What he did',
+        description:
+          'He described the full product to Borchani in a single detailed prompt — the data model, the dashboard layout, the subscription list view, the renewal notification logic. Two days of iteration later, he had a functional frontend connected to a simple backend he wired up himself in a day.',
+      },
+      {
+        title: 'The result',
+        description:
+          'Shipped a private beta to 40 users in the first week. Validated three core assumptions, killed two features he thought were important, and started charging within three weeks. Total cost: one Borchani Pro subscription and three days of his own time.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Founder working on SaaS product',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Case 2 ******************* -->
+
+  <Content
+    isAfterContent
+    tagline="Case study 02"
+    title="Agency cuts client delivery time by 60%"
+    items={[
+      {
+        title: 'The situation',
+        description:
+          'Pixel & Co, a five-person digital agency in Austin, was taking 3–4 weeks to deliver standard client projects — landing pages, simple web apps, client portals. Margins were tight and the team was stretched.',
+      },
+      {
+        title: 'What they did',
+        description:
+          'They started using Borchani for the frontend scaffold and routine components on every new project. Their process became: Borchani for the initial structure and UI components (half a day), developers for custom business logic and backend connections (2–3 days), designer for visual polish and brand alignment (1 day).',
+      },
+      {
+        title: 'The result',
+        description:
+          'Average project delivery dropped from 3.5 weeks to 1.5 weeks. They took on 40% more projects in the same quarter without hiring. One developer summarized it as: "Borchani does the setup work I hated anyway. I spend my time on the 20% that actually needs my brain."',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Agency team working on projects',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Case 3 ******************* -->
+
+  <Content
+    isReversed
+    isAfterContent
+    tagline="Case study 03"
+    title="Non-technical founder ships her product without hiring"
+    items={[
+      {
+        title: 'The situation',
+        description:
+          'Maria Okonkwo runs a consulting business. She needed a client portal — a place where clients could log in, view project status, upload documents, and leave feedback on deliverables. Every quote from developers started at $8,000. She did not have that budget.',
+      },
+      {
+        title: 'What she did',
+        description:
+          'She spent two evenings learning to use Borchani. Her first two attempts produced apps that were too complex. On her third try, with a simpler, more focused prompt, she got something close. Six iterations through chat over two days got her to something she was happy with.',
+      },
+      {
+        title: 'The result',
+        description:
+          'Her client portal has been running for eight months. Three clients use it weekly. The only developer involvement was two hours from a freelancer to connect the authentication backend. She spent $49 on a Borchani Pro month and $150 for the backend work. Total.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Founder working on her product',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Case 4 ******************* -->
+
+  <Content
+    isAfterContent
+    tagline="Case study 04"
+    title="Engineering team ships internal tools in hours"
+    items={[
+      {
+        title: 'The situation',
+        description:
+          'The ops team at a 60-person startup had been asking engineering for an incident tracker for eight months. It kept getting deprioritized. Every month, incidents were tracked in a shared Google Doc that became harder to navigate. The engineering team was aware of the problem but the backlog never cleared.',
+      },
+      {
+        title: 'What they did',
+        description:
+          "One engineer — tired of the problem — spent a Friday afternoon using Borchani to build it. She described the tool in a prompt, iterated for three hours, exported the code, connected it to the company auth system in an hour, and deployed it by end of day.",
+      },
+      {
+        title: 'The result',
+        description:
+          'The tool has been in daily use for six months. The ops team stopped using the Google Doc the week it launched. The engineer spent a total of five hours on the project. In a retrospective, the team estimated they would have needed at least a three-week sprint to build it properly the traditional way.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Engineering team building tools',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Case 5 ******************* -->
+
+  <Content
+    isReversed
+    isAfterContent
+    tagline="Case study 05"
+    title="Freelancer increases revenue by taking on more projects"
+    items={[
+      {
+        title: 'The situation',
+        description:
+          'David Chen is a freelance developer who takes on 4–5 small client projects a month. Most of them involve similar work: landing pages, simple web apps, small admin tools. He was capped at what he could take on because each project took the same amount of time regardless of complexity.',
+      },
+      {
+        title: 'What he did',
+        description:
+          'He started using Borchani for the first generation of every project. His new workflow: spend 30 minutes describing the project carefully, review the output, spend the rest of the time on customization and client-specific logic. Projects that used to take five days now take two.',
+      },
+      {
+        title: 'The result',
+        description:
+          'He increased his monthly project load from five to nine without working more hours. His monthly revenue went up by roughly 70%. He raises his rates regularly now because he can deliver faster than any local alternative. "I quote the same price as before and deliver in half the time. The margin change is significant."',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Freelancer working on projects',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials ******************* -->
+
+  <Testimonials
+    title="In their own words"
+    testimonials={[
+      {
+        testimonial:
+          'I kept putting off building my product because every quote was too high. Borchani removed the bottleneck. I stopped waiting for permission and just built it.',
+        name: 'Alex Romero',
+        job: 'Founder, Subtrack',
+        image: {
+          src: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+          alt: 'Alex Romero',
+        },
+      },
+      {
+        testimonial:
+          'The code that comes out is clean enough to ship. That was the thing I was skeptical about. I thought I would spend as much time fixing generated code as writing from scratch. I was wrong.',
+        name: 'Sanjay Patel',
+        job: 'Senior Developer, Pixel & Co',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+          alt: 'Sanjay Patel',
+        },
+      },
+      {
+        testimonial:
+          "I'm not a developer. I was nervous. But describing what I needed to an AI wasn't that different from describing it to a developer — just faster and cheaper.",
+        name: 'Maria Okonkwo',
+        job: 'Founder, Okonkwo Consulting',
+        image: {
+          src: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+          alt: 'Maria Okonkwo',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Ready to write your own case study?"
+    subtitle="Start on the free plan — no credit card needed. Most people have a working preview in under 30 minutes."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start building free',
+        href: 'https://app.borchani.com/signup',
+        target: '_blank',
+      },
+    ]}
+  />
+
+  <!-- JSON-LD: ItemList of case studies -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Borchani Case Studies",
+    "description": "Real projects built with Borchani AI app builder",
+    "numberOfItems": 5,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "SaaS MVP in 2 days — Alex Romero",
+        "description": "Founder ships subscription management SaaS in 2 days using Borchani instead of 6 weeks with a development team."
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Agency delivery time cut 60% — Pixel & Co",
+        "description": "Digital agency reduces average project delivery from 3.5 weeks to 1.5 weeks using Borchani for frontend scaffolding."
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Non-technical founder builds client portal — Maria Okonkwo",
+        "description": "Consultant builds and deploys a client portal without engineering help, spending under $200 total."
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Engineering team ships internal incident tracker — startup ops team",
+        "description": "One engineer builds a complete incident tracking tool in 5 hours that would have taken a 3-week sprint."
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Freelancer increases revenue 70% — David Chen",
+        "description": "Freelance developer increases monthly projects from 5 to 9 without working more hours."
+      }
+    ]
+  })} />
+</Layout>

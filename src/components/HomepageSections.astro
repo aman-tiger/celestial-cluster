@@ -1,0 +1,587 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import type { Translations } from '~/i18n/schema';
+
+interface Props {
+  t: Translations;
+  locale?: string;
+}
+
+const { t, locale = 'en' } = Astro.props;
+const prefix = locale === 'en' ? '' : `/${locale}`;
+
+const sdkCode = `import BorchaniClient from '@borchani/sdk';
+const client = new BorchaniClient({ apiKey: process.env.BORCHANI_API_KEY });
+const app = await client.build('Build a kanban board with drag & drop');
+await app.waitUntilReady();
+console.log('Live at:', app.previewUrl);`;
+---
+
+<!-- ===================== HERO ===================== -->
+<Hero
+  actions={[
+    {
+      variant: 'primary',
+      text: t.hero.ctaPrimary,
+      href: 'https://app.borchani.com/signup',
+      target: '_blank',
+      icon: 'tabler:rocket',
+    },
+    {
+      text: t.hero.ctaSecondary,
+      href: '#how-it-works',
+      icon: 'tabler:player-play',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Borchani AI code generation interface',
+  }}
+>
+  <Fragment slot="title">
+    {t.hero.titleLine1}<br />
+    <span class="text-accent dark:text-white highlight">{t.hero.titleHighlight}</span><br />
+    {t.hero.titleLine3}
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    <span class="hidden sm:inline" set:html={t.hero.subtitleDesktop} />
+    <span class="block sm:hidden font-bold text-blue-600">{t.hero.subtitleMobile}</span>
+  </Fragment>
+</Hero>
+
+<!-- Google sign-in placeholder -->
+<div class="flex justify-center -mt-4 mb-8">
+  <button disabled class="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-gray-500 dark:text-gray-400 opacity-60 cursor-not-allowed shadow-sm">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+    </svg>
+    {t.hero.signInGoogle}
+    <span class="text-xs opacity-75">({t.hero.signInComingSoon})</span>
+  </button>
+</div>
+
+<!-- Social proof strip -->
+<Note title={t.note.trusted} description={t.note.stats} />
+
+<!-- ===================== FEATURES ===================== -->
+<Features
+  id="features"
+  tagline={t.features.tagline}
+  title={t.features.title}
+  subtitle={t.features.subtitle}
+  items={[
+    {
+      title: t.features.aiCode.title,
+      description: t.features.aiCode.description,
+      icon: 'tabler:brain',
+    },
+    {
+      title: t.features.livePreview.title,
+      description: t.features.livePreview.description,
+      icon: 'tabler:eye',
+    },
+    {
+      title: t.features.iteration.title,
+      description: t.features.iteration.description,
+      icon: 'tabler:message-circle',
+    },
+    {
+      title: t.features.stack.title,
+      description: t.features.stack.description,
+      icon: 'tabler:stack-2',
+    },
+    {
+      title: t.features.deploy.title,
+      description: t.features.deploy.description,
+      icon: 'tabler:cloud-upload',
+    },
+    {
+      title: t.features.security.title,
+      description: t.features.security.description,
+      icon: 'tabler:shield-check',
+    },
+  ]}
+/>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<Steps
+  id="how-it-works"
+  title={t.steps.title}
+  items={[
+    {
+      title: t.steps.step1.title,
+      description: t.steps.step1.description,
+      icon: 'tabler:message',
+    },
+    {
+      title: t.steps.step2.title,
+      description: t.steps.step2.description,
+      icon: 'tabler:code',
+    },
+    {
+      title: t.steps.step3.title,
+      description: t.steps.step3.description,
+      icon: 'tabler:rocket',
+    },
+    {
+      title: t.steps.done,
+      icon: 'tabler:check',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80',
+    alt: 'Borchani build process',
+  }}
+/>
+
+<!-- ===================== TECH STACK ===================== -->
+<Content
+  isReversed
+  tagline={t.techStack.tagline}
+  title={t.techStack.title}
+  items={[
+    {
+      title: t.techStack.modern.title,
+      description: t.techStack.modern.description,
+    },
+    {
+      title: t.techStack.edge.title,
+      description: t.techStack.edge.description,
+    },
+    {
+      title: t.techStack.realtime.title,
+      description: t.techStack.realtime.description,
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1555066931-4365d14bab5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Modern tech stack',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      {t.techStack.contentTitle}
+    </h3>
+    {t.techStack.contentSubtitle}
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- ===================== SDK ===================== -->
+<Content
+  id="sdk"
+  isAfterContent
+  items={[
+    {
+      title: t.sdk.typed.title,
+      description: t.sdk.typed.description,
+    },
+    {
+      title: t.sdk.session.title,
+      description: t.sdk.session.description,
+    },
+    {
+      title: t.sdk.cicd.title,
+      description: t.sdk.cicd.description,
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Borchani SDK integration',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">
+      {t.sdk.contentTitle}
+    </h3>
+    <pre
+      class="bg-slate-900 text-green-400 p-4 rounded-lg text-sm overflow-x-auto leading-relaxed"
+      set:html={sdkCode
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')}
+    ></pre>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- ===================== USE CASES ===================== -->
+<Features2
+  id="use-cases"
+  title={t.useCases.title}
+  subtitle={t.useCases.subtitle}
+  tagline={t.useCases.tagline}
+  items={[
+    {
+      title: t.useCases.tasks.title,
+      description: t.useCases.tasks.description,
+      icon: 'tabler:checkbox',
+    },
+    {
+      title: t.useCases.dashboards.title,
+      description: t.useCases.dashboards.description,
+      icon: 'tabler:chart-bar',
+    },
+    {
+      title: t.useCases.ecommerce.title,
+      description: t.useCases.ecommerce.description,
+      icon: 'tabler:shopping-cart',
+    },
+    {
+      title: t.useCases.internal.title,
+      description: t.useCases.internal.description,
+      icon: 'tabler:tool',
+    },
+    {
+      title: t.useCases.ai.title,
+      description: t.useCases.ai.description,
+      icon: 'tabler:robot',
+    },
+    {
+      title: t.useCases.saas.title,
+      description: t.useCases.saas.description,
+      icon: 'tabler:flask',
+    },
+    {
+      title: t.useCases.social.title,
+      description: t.useCases.social.description,
+      icon: 'tabler:users',
+    },
+    {
+      title: t.useCases.content.title,
+      description: t.useCases.content.description,
+      icon: 'tabler:file-text',
+    },
+    {
+      title: t.useCases.productivity.title,
+      description: t.useCases.productivity.description,
+      icon: 'tabler:clock',
+    },
+  ]}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Features2>
+
+<!-- ===================== STATS ===================== -->
+<Stats
+  stats={[
+    { title: t.stats.appsBuilt, amount: t.stats.appsAmount },
+    { title: t.stats.developers, amount: t.stats.devsAmount },
+    { title: t.stats.components, amount: t.stats.componentsAmount },
+    { title: t.stats.deployTime, amount: t.stats.deployAmount },
+  ]}
+/>
+
+<!-- ===================== FAQ ===================== -->
+<FAQs
+  id="faq"
+  title={t.faq.title}
+  subtitle={t.faq.subtitle}
+  tagline={t.faq.tagline}
+  classes={{ container: 'max-w-6xl' }}
+  items={[
+    {
+      title: t.faq.q1.title,
+      description: t.faq.q1.description,
+    },
+    {
+      title: t.faq.q2.title,
+      description: t.faq.q2.description,
+    },
+    {
+      title: t.faq.q3.title,
+      description: t.faq.q3.description,
+    },
+    {
+      title: t.faq.q4.title,
+      description: t.faq.q4.description,
+    },
+    {
+      title: t.faq.q5.title,
+      description: t.faq.q5.description,
+    },
+    {
+      title: t.faq.q6.title,
+      description: t.faq.q6.description,
+    },
+    {
+      title: t.faq.q7.title,
+      description: t.faq.q7.description,
+    },
+    {
+      title: t.faq.q8.title,
+      description: t.faq.q8.description,
+    },
+  ]}
+/>
+
+<!-- ===================== PRICING ===================== -->
+<Pricing
+  id="pricing"
+  title={t.pricing.title}
+  subtitle={t.pricing.subtitle}
+  prices={[
+    {
+      title: t.pricing.starterTitle,
+      subtitle: t.pricing.starterSubtitle,
+      price: 19,
+      period: t.pricing.perMonth,
+      items: [
+        { description: '150 AI credits / month' },
+        { description: 'Live sandbox preview' },
+        { description: 'Download code as ZIP' },
+        { description: 'React 19 + TypeScript + Tailwind' },
+        { description: 'Community support' },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: t.pricing.starterCta,
+        href: 'https://app.borchani.com/signup?plan=starter',
+      },
+    },
+    {
+      title: t.pricing.proTitle,
+      subtitle: t.pricing.proSubtitle,
+      price: 49,
+      period: t.pricing.perMonth,
+      items: [
+        { description: '500 AI credits / month' },
+        { description: 'One-click GitHub export' },
+        { description: 'Custom domain deployment' },
+        { description: 'Priority build queue' },
+        { description: 'TypeScript SDK access' },
+        { description: 'Email support (< 24 h)' },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: t.pricing.proCta,
+        href: 'https://app.borchani.com/signup?plan=pro',
+      },
+      hasRibbon: true,
+      ribbonTitle: t.pricing.proRibbon,
+    },
+    {
+      title: t.pricing.businessTitle,
+      subtitle: t.pricing.businessSubtitle,
+      price: 149,
+      period: t.pricing.perMonth,
+      items: [
+        { description: '2,000 AI credits / month' },
+        { description: 'Up to 10 seats included' },
+        { description: 'Shared workspaces & build history' },
+        { description: 'REST API + webhooks' },
+        { description: 'SSO & admin controls' },
+        { description: 'Priority chat & email support' },
+      ],
+      callToAction: {
+        target: '_blank',
+        text: t.pricing.businessCta,
+        href: 'https://app.borchani.com/signup?plan=business',
+      },
+    },
+  ]}
+/>
+
+<!-- ===================== CONTACT CTA ===================== -->
+<Steps2
+  title={t.contact.title}
+  subtitle={t.contact.subtitle}
+  callToAction={{
+    text: t.contact.cta,
+    href: `${prefix}/contact`,
+  }}
+  items={[
+    {
+      title: t.contact.email,
+      description: t.contact.emailHandle,
+      icon: 'tabler:mail',
+    },
+    {
+      title: t.contact.follow,
+      description: t.contact.followHandle,
+      icon: 'tabler:brand-x',
+    },
+    {
+      title: t.contact.discord,
+      description: t.contact.discordHandle,
+      icon: 'tabler:brand-discord',
+    },
+  ]}
+/>
+
+<!-- ===================== BLOG ===================== -->
+<BlogLatestPosts
+  id="blog"
+  title={t.blog.title}
+  information={t.blog.subtitle}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</BlogLatestPosts>
+
+<!-- ===================== JSON-LD Structured Data ===================== -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://borchani.com/#website",
+      "url": "https://borchani.com/",
+      "name": "Borchani",
+      "description": "AI-powered full-stack app builder. Describe your idea, get production-ready code in minutes.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://borchani.com/blog?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://borchani.com/#organization",
+      "name": "Borchani",
+      "url": "https://borchani.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://borchani.com/favicon.svg"
+      },
+      "sameAs": [
+        "https://x.com/borchani"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://borchani.com/#app",
+      "name": "Borchani",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "url": "https://borchani.com",
+      "description": "Borchani is an AI-powered app builder that generates production-ready full-stack web applications from natural language descriptions. Built with React 19, TypeScript, Tailwind CSS, and edge deployment.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free Plan",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro Plan",
+          "price": "29",
+          "priceCurrency": "USD",
+          "billingIncrement": "P1M"
+        }
+      ],
+      "featureList": [
+        "AI code generation",
+        "Live sandbox preview",
+        "React 19 + TypeScript + Tailwind CSS",
+        "One-click deployment",
+        "GitHub export",
+        "TypeScript SDK",
+        "Real-time collaborative editing",
+        "Enterprise-grade security"
+      ],
+      "screenshot": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80",
+      "publisher": { "@id": "https://borchani.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://borchani.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Borchani?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Borchani is an AI-powered app builder. You describe what you want to create in plain English, and Borchani generates a complete, production-ready full-stack application — React frontend, TypeScript, Tailwind CSS — with a live preview and one-click deployment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to know how to code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Borchani is designed for both developers who want to move faster and non-technical users who want to build without learning to code. You can use Borchani entirely through natural language conversation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What tech stack do generated apps use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All apps are built with React 19, TypeScript, Vite, Tailwind CSS, and shadcn/ui components. The stack is modern, well-documented, and widely adopted."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export and own the code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every app you build belongs to you. Export the full source code to GitHub at any time, or download it as a ZIP. There are no platform fees on the code itself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can start building for free with a generous monthly quota. Paid plans unlock higher limits, priority queue access, team collaboration features, and advanced deployment options."
+          }
+        }
+      ]
+    }
+  ]
+})} />
+
+<!-- ===================== CTA ===================== -->
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: t.cta.primary,
+      href: 'https://app.borchani.com/signup',
+      target: '_blank',
+      icon: 'tabler:rocket',
+    },
+    {
+      variant: 'secondary',
+      text: t.cta.secondary,
+      href: `${prefix}/pricing`,
+      icon: 'tabler:currency-dollar',
+    },
+  ]}
+>
+  <Fragment slot="title">
+    {t.cta.titleLine1}<br class="hidden md:inline" />
+    <span class="text-accent dark:text-white"> {t.cta.titleHighlight}</span>
+  </Fragment>
+
+  <Fragment slot="subtitle" set:html={t.cta.subtitle} />
+</CallToAction>

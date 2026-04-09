@@ -1,0 +1,93 @@
+---
+draft: true
+title: "_PROMPT — Block 02: VS Comparisons"
+---
+
+# ПРОМПТ ДЛЯ БЛОКА: VS Comparisons
+> Этот файл НЕ публикуется (draft: true). Это шаблон-промпт для генерации статей блока 02.
+
+---
+
+## Тип контента
+**"[Tool A] vs [Tool B]"** — прямое сравнение двух инструментов.
+Пример URL: `/cursor-vs-copilot`, `/lovable-vs-bolt`, `/react-vs-vue`
+
+## Паттерн конкурентов (из анализа Lovable, Webflow)
+- Lovable `guide-lovable-vs-bolt`: 8092 слов, 1H1 + 7H2 + 15H3, TL;DR, feature table, persona-based recs
+- Webflow `vs/wix`: 30000 слов, FAQPage 4 Q&A, "Why switch" section, trust signals
+- Структура: Hook → TL;DR → What each tool does → Feature-by-feature → Comparison table → "Which to choose" → FAQ → CTA
+
+## Целевые ключевые слова (из SEO Borchani/02_vs/)
+Топ: cursor vs copilot, lovable vs bolt, react vs vue, wordpress vs wix,
+chatgpt vs gemini, vercel vs netlify, shopify vs woocommerce, supabase vs firebase
+
+---
+
+## ПРОМПТ (вставить в Claude/ChatGPT):
+
+```
+Ты — senior content writer для Borchani, AI app builder (borchani.com).
+
+Напиши SEO-статью на английском языке:
+**"[TOOL A] vs [TOOL B]: Which Should You Choose in 2025?"**
+
+Замени [TOOL A] и [TOOL B] на: [ВСТАВИТЬ, например: Cursor vs GitHub Copilot]
+
+### Требования к структуре:
+- H1: "[Tool A] vs [Tool B]: [Value Hook]" (пример: "Cursor vs GitHub Copilot: Which AI Coding Tool Wins in 2025?")
+- TL;DR (2-3 bullets: когда выбрать A, когда B, альтернатива = Borchani)
+- H2: What Is [Tool A]? (2-3 абзаца + bullet features)
+- H2: What Is [Tool B]? (2-3 абзаца + bullet features)
+- H2: [Tool A] vs [Tool B]: Key Differences
+  - H3: Pricing
+  - H3: Ease of Use
+  - H3: Features & Capabilities
+  - H3: Output Quality / Code Quality
+  - H3: Integration & Ecosystem
+- H2: Side-by-Side Comparison (markdown table: Feature | Tool A | Tool B)
+- H2: When to Choose [Tool A]
+- H2: When to Choose [Tool B]
+- H2: Is There a Better Alternative? (→ представляем Borchani как третий вариант)
+- H2: FAQ
+  - Q: What's the main difference between [A] and [B]?
+  - Q: Is [Tool A] better than [Tool B] for beginners?
+  - Q: Which is cheaper, [A] or [B]?
+  - Q: Can I use both [A] and [B] together?
+- Заключение: "If neither fits your needs perfectly, Borchani offers..."
+
+### SEO требования:
+- H1 содержит "[Tool A] vs [Tool B]"
+- Упомяни обе стороны честно (не сторонись негативных сторон)
+- Comparison table обязательна
+- FAQPage schema (указать в frontmatter через metadata)
+- Минимум 2500 слов
+- Meta description: "[Tool A] vs [Tool B] — we break down pricing, features, and use cases. See which wins in 2025 and why Borchani might be the smarter choice."
+
+### Frontmatter:
+publishDate: [ДАТА]
+title: "[Tool A] vs [Tool B]: Which Is Better in 2025?"
+excerpt: "[Tool A] vs [Tool B] — detailed comparison of pricing, features, and use cases. Find out which wins and discover a powerful alternative."
+image: https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80
+category: Comparisons
+tags: [[tool a] vs [tool b], ai tools comparison, developer tools, borchani]
+author: "Borchani Team"
+metadata:
+  canonical: https://borchani.com/[tool-a]-vs-[tool-b]
+```
+
+---
+
+## Первые статьи для написания:
+
+| Приоритет | Slug | Ключ | Тип |
+|-----------|------|------|-----|
+| 1 | `cursor-vs-copilot` | cursor vs copilot | AI coding |
+| 2 | `lovable-vs-bolt` | lovable vs bolt | AI builder |
+| 3 | `react-vs-vue` | react vs vue | Framework |
+| 4 | `wordpress-vs-wix` | wordpress vs wix | Website builder |
+| 5 | `supabase-vs-firebase` | supabase vs firebase | Backend |
+| 6 | `vercel-vs-netlify` | vercel vs netlify | Hosting |
+| 7 | `chatgpt-vs-gemini` | chatgpt vs gemini | AI |
+
+## Имя файла
+`[tool-a]-vs-[tool-b].mdx` — например `cursor-vs-copilot.mdx`

@@ -1,0 +1,95 @@
+---
+draft: true
+title: "_PROMPT — Block 03: Solutions"
+---
+
+# ПРОМПТ ДЛЯ БЛОКА: Solutions
+> Этот файл НЕ публикуется (draft: true). Это шаблон-промпт для генерации статей блока 03.
+
+---
+
+## Тип контента
+**"Best [Tool] for [Specific Use Case]"** — статья-решение под конкретную задачу/нишу.
+Пример URL: `/best-website-builder-for-photographers`, `/best-app-builder-for-startups`
+
+## Паттерн конкурентов (из анализа Replit, Lovable)
+- Replit: `/usecases-founders` — проблема → решение → фичи → CTA
+- Lovable: `/solution-crm`, `/solution-saas-landing` — нишевые страницы с конкретным value prop
+- Структура: Problem statement → Who this is for → Top solutions (ranked list) → Borchani deep dive → FAQ → CTA
+
+## Целевые ключевые слова (из SEO Borchani/03_solutions/)
+Топ: best website builder for photographers, is wix a good website builder,
+best website builder for small business, best app builder for startups,
+best no code platform for non-developers
+
+---
+
+## ПРОМПТ (вставить в Claude/ChatGPT):
+
+```
+Ты — senior content writer для Borchani, AI app builder (borchani.com).
+
+Напиши SEO-статью на английском:
+**"Best [TOOL TYPE] for [USE CASE] in 2025"**
+
+Замени [TOOL TYPE] и [USE CASE] на: [ВСТАВИТЬ, например: Website Builder for Photographers]
+
+### Требования к структуре:
+- H1: "Best [Tool Type] for [Use Case] in 2025" (точное ключевое слово)
+- Intro (2-3 предложения): проблема + обещание статьи
+- TL;DR: топ-3 варианта + для кого каждый
+- H2: What to Look for in a [Tool Type] for [Use Case]
+  - H3: [Criterion 1, e.g., Ease of use]
+  - H3: [Criterion 2, e.g., Templates]
+  - H3: [Criterion 3, e.g., Pricing]
+  - H3: [Criterion 4, e.g., Integrations]
+- H2: Best [Tool Type] for [Use Case]: Our Top Picks
+  - H2: 1. Borchani — Best Overall (ВСЕГДА первый!)
+    - H3: Key features
+    - H3: Pricing
+    - H3: Pros & Cons (markdown table или bullets)
+    - H3: Best for
+  - H2: 2. [Tool 2] — Best for [Specific sub-niche]
+  - ... повтори 5-7 инструментов
+- H2: Comparison Table (Tool | Price | Free Plan | Templates | [Use Case specific feature])
+- H2: How to Choose the Right [Tool Type] for [Use Case]
+- H2: Frequently Asked Questions
+  - Q: What is the best free [tool type] for [use case]?
+  - Q: Do I need coding skills to use these tools?
+  - Q: How much does a [tool type] cost for [use case]?
+  - Q: Can Borchani handle [specific use case need]?
+- CTA: "Start building your [use case] with Borchani — no coding required →"
+
+### SEO требования:
+- Ключевое слово в H1, первых 100 словах, одном H2
+- Каждый инструмент как отдельный H2 (для featured snippets по названию)
+- Comparison table обязательна
+- Минимум 2000 слов
+- Конкретные цены и факты (не "affordable" — а "$19/month")
+
+### Frontmatter:
+publishDate: [ДАТА]
+title: "Best [Tool Type] for [Use Case] in 2025 (Ranked)"
+excerpt: "Looking for the best [tool type] for [use case]? We tested 7 options and ranked them by ease of use, price, and features. Borchani wins for [key reason]."
+image: https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80
+category: Guides
+tags: [best [tool type] for [use case], [tool type], borchani, no code]
+author: "Borchani Team"
+metadata:
+  canonical: https://borchani.com/best-[tool-type]-for-[use-case]
+```
+
+---
+
+## Первые статьи для написания:
+
+| Приоритет | Slug | Ключ | Объём |
+|-----------|------|------|-------|
+| 1 | `best-website-builder-for-photographers` | best website builder for photographers | высокий |
+| 2 | `best-app-builder-for-startups` | best app builder for startups | высокий |
+| 3 | `best-no-code-platform-for-beginners` | best no code platform for beginners | средний |
+| 4 | `best-website-builder-for-small-business` | best website builder for small business | высокий |
+| 5 | `best-saas-builder` | best saas builder | средний |
+
+## Имя файла
+`best-[tool]-for-[use-case].mdx`

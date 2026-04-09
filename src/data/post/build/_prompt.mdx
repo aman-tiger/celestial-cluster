@@ -1,0 +1,94 @@
+---
+draft: true
+title: "_PROMPT — Block 04: Build (How-To Guides)"
+---
+
+# ПРОМПТ ДЛЯ БЛОКА: Build
+> Этот файл НЕ публикуется (draft: true). Это шаблон-промпт для генерации статей блока 04.
+
+---
+
+## Тип контента
+**"How to Build [Thing]"** — пошаговые инструкции как построить что-то конкретное.
+Пример URL: `/how-to-build-a-website`, `/how-to-build-saas`, `/how-to-build-a-community`
+
+## Паттерн конкурентов (из анализа Replit, Webflow)
+- Webflow Blog: пошаговые гайды 20000+ слов, HowTo schema, numbered steps
+- Replit: `/usecases-rapid-prototyping` — from idea → deployed app быстро
+- Структура: What you'll build → Prerequisites → Step-by-step (numbered H2s) → Tips → FAQ → CTA
+
+## Целевые ключевые слова (из SEO Borchani/04_build/)
+Топ: how to build a website, how to build a web app, how to build an app,
+how to build a landing page, how to build saas, how to build a community,
+how to build a photography website
+
+---
+
+## ПРОМПТ (вставить в Claude/ChatGPT):
+
+```
+Ты — senior content writer для Borchani, AI app builder (borchani.com).
+
+Напиши SEO-гайд на английском:
+**"How to Build [THING] in 2025 (Step-by-Step)"**
+
+Замени [THING] на: [ВСТАВИТЬ, например: a Website Without Coding]
+
+### Требования к структуре:
+- H1: "How to Build [Thing] in 2025: Step-by-Step Guide"
+- Intro (3-4 предложения): что читатель построит, сколько времени займёт, нужен ли код
+- "What You'll Need" box (простой список: браузер, аккаунт Borchani, 30 минут)
+- H2: Step 1 — [First action]
+  - скриншот/пример
+  - конкретные инструкции
+- H2: Step 2 — [Next action]
+  - ... (всего 5-8 шагов)
+- H2: Step [N] — Deploy & Launch
+- H2: Tips for [Thing] That Actually Works
+  - H3: [Tip 1]
+  - H3: [Tip 2]
+  - H3: [Tip 3]
+- H2: Common Mistakes to Avoid
+- H2: Examples of [Thing] Built with Borchani (2-3 примера)
+- H2: FAQ
+  - Q: How long does it take to build [thing]?
+  - Q: Do I need coding skills to build [thing]?
+  - Q: How much does it cost to build [thing]?
+  - Q: Can I build [thing] for free?
+- CTA: "Ready to build your [thing]? Start with Borchani in 5 minutes →"
+
+### SEO требования:
+- HowTo schema (шаги пронумерованы, каждый шаг = отдельный H2)
+- Ключевое слово "how to build [thing]" в H1 и первом абзаце
+- Минимум 2000 слов
+- Конкретные временные оценки ("takes about 20 minutes")
+- Скриншоты/примеры кода где уместно (placeholder: [INSERT SCREENSHOT])
+- Внутренние ссылки: связанные гайды Borchani
+
+### Frontmatter:
+publishDate: [ДАТА]
+title: "How to Build [Thing] in 2025 — Step-by-Step Guide"
+excerpt: "Learn how to build [thing] without coding in 2025. This step-by-step guide walks you through the entire process using Borchani, from idea to launch in under [X] hours."
+image: https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80
+category: Guides
+tags: [how to build [thing], app builder, no code, borchani]
+author: "Borchani Team"
+metadata:
+  canonical: https://borchani.com/how-to-build-[thing]
+```
+
+---
+
+## Первые статьи для написания:
+
+| Приоритет | Slug | Ключ |
+|-----------|------|------|
+| 1 | `how-to-build-a-website` | how to build a website |
+| 2 | `how-to-build-an-app` | how to build an app |
+| 3 | `how-to-build-saas` | how to build saas |
+| 4 | `how-to-build-a-landing-page` | how to build a landing page |
+| 5 | `how-to-build-a-web-app` | how to build a web app |
+| 6 | `how-to-build-a-community` | how to build a community |
+
+## Имя файла
+`how-to-build-[thing].mdx`

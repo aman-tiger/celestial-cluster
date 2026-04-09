@@ -1,0 +1,77 @@
+---
+import { Icon } from 'astro-icon/components';
+import { SUPPORTED_LOCALES, LOCALE_LABELS } from '~/i18n';
+
+export interface Props {
+  currentLocale: string;
+  currentPath: string;
+}
+
+const { currentLocale, currentPath } = Astro.props;
+
+function getLocalizedPath(targetLocale: string, path: string): string {
+  // Strip existing locale prefix
+  const withoutLocale = path.replace(/^\/(es|ru|ja|ko)(\/|$)/, '/') || '/';
+  // English = no prefix, others = /locale/path
+  if (targetLocale === 'en') return withoutLocale;
+  return `/${targetLocale}${withoutLocale === '/' ? '' : withoutLocale}`;
+}
+---
+
+<div class="relative language-switcher">
+  <button
+    type="button"
+    class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center gap-1"
+    aria-haspopup="listbox"
+    aria-expanded="false"
+    aria-label={LOCALE_LABELS[currentLocale as keyof typeof LOCALE_LABELS] ?? 'Language'}
+    id="language-switcher-btn"
+  >
+    <Icon name="tabler:world" class="w-5 h-5" />
+    <span class="hidden sm:inline text-xs font-medium uppercase">{currentLocale}</span>
+    <Icon name="tabler:chevron-down" class="w-3 h-3" />
+  </button>
+
+  <ul
+    role="listbox"
+    id="language-switcher-menu"
+    class="language-menu hidden absolute right-0 mt-1 w-36 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 py-1"
+  >
+    {SUPPORTED_LOCALES.map((locale) => (
+      <li role="option" aria-selected={locale === currentLocale}>
+        <a
+          href={getLocalizedPath(locale, currentPath)}
+          class:list={[
+            'flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors',
+            locale === currentLocale
+              ? 'font-semibold text-blue-600 dark:text-blue-400'
+              : 'text-gray-700 dark:text-gray-300',
+          ]}
+        >
+          {LOCALE_LABELS[locale]}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  const btn = document.getElementById('language-switcher-btn');
+  const menu = document.getElementById('language-switcher-menu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!btn.contains(e.target as Node) && !menu.contains(e.target as Node)) {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+</script>

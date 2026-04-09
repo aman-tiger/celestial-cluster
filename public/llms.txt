@@ -1,0 +1,44 @@
+# Borchani
+
+Borchani is an AI app builder that generates React + TypeScript + Tailwind apps from text descriptions. Describe what you want to build, and Borchani produces production-ready code — no setup, no boilerplate, no hand-holding required.
+
+> Describe your app. Get production-ready code.
+
+## Borchani
+
+- [Homepage](https://borchani.com): Overview of Borchani — the AI app builder for developers and founders.
+- [Pricing](https://borchani.com/pricing): Plans and pricing for Borchani, including free tier and pro options.
+- [About](https://borchani.com/about): The story, mission, and team behind Borchani.
+- [Blog](https://borchani.com/blog): Articles on AI development, no-code trends, and Borchani product updates.
+- [Sign up](https://app.borchani.com/signup): Create a free Borchani account and start building.
+
+## Content
+
+Borchani publishes 21 SEO content blocks covering the full AI app building journey:
+
+- [Alternatives](https://borchani.com/lovable-alternative): Compares popular AI app builders (Lovable, Bolt, Replit, Cursor, Webflow, Vercel) as Borchani alternatives. Pattern: `/[tool]-alternative`. Examples: `/webflow-alternative`, `/lovable-alternative`, `/cursor-alternative`.
+- [Comparisons](https://borchani.com/lovable-vs-bolt): Side-by-side comparisons between AI app builders and no-code tools. Pattern: `/[tool-a]-vs-[tool-b]`.
+- [Solutions](https://borchani.com/best-ai-builder-for-startups): Best AI tools for specific use cases such as startups, agencies, and MVPs. Pattern: `/best-[tool]-for-[use-case]`.
+- [Build Guides](https://borchani.com/how-to-build-saas-app): Step-by-step tutorials for building specific app types with AI. Pattern: `/how-to-build-[thing]`.
+- [For Use Cases](https://borchani.com/best-app-builder-for-startups): Best app builder recommendations for specific industries or personas. Pattern: `/best-app-for-[use-case]`.
+- [Use Cases](https://borchani.com/borchani-use-cases): Real-world applications and examples of building with Borchani. Pattern: `/[tool]-use-cases`.
+- [Guides](https://borchani.com/guide-ai-app-building): Comprehensive guides on AI app building, prompting strategies, and deployment. Pattern: `/guide-[topic]`.
+- [Templates](https://borchani.com/saas-template): Free starter templates for common app patterns including SaaS, dashboards, and landing pages. Pattern: `/[type]-template`.
+- [Prompts](https://borchani.com/saas-prompts): Curated AI prompts for building specific app features. Pattern: `/[topic]-prompts`.
+- [Blog](https://borchani.com/blog): Articles on AI development, no-code trends, and Borchani product updates. Pattern: `/blog/[topic]`.
+- [FAQ](https://borchani.com/what-is-ai-app-builder): Definitions and explanations of AI app building concepts. Pattern: `/what-is-[term]`.
+- [Dictionary](https://borchani.com/no-code-definition): Glossary of terms including AI builder, no-code, full-stack AI, and more. Pattern: `/[term]-definition`.
+- [Tools](https://borchani.com/app-name-generator): Free utilities including app name generator, prompt generator, and schema generator. Pattern: `/[tool-name]-generator`.
+- [Paywall Guides](https://borchani.com/how-to-add-paywall): How to monetize apps built with AI using Stripe, subscriptions, and one-time payments. Pattern: `/how-to-add-paywall`.
+- [Landing Pages](https://borchani.com/landing-page-builder): How to build and optimize landing pages using AI. Pattern: `/landing-page-[topic]`.
+- [Pricing Guides](https://borchani.com/saas-pricing-models): SaaS pricing models, strategies, and implementation with AI. Pattern: `/saas-pricing-[topic]`.
+- [Auth Guides](https://borchani.com/oauth-authentication): Adding authentication to AI-built apps including OAuth, magic links, Clerk, and Auth0. Pattern: `/[topic]-authentication`.
+- [Affiliate](https://borchani.com/affiliate-program): Affiliate program details and partnership opportunities for Borchani. Pattern: `/affiliate-[topic]`.
+
+> Note: All blog and content pages are written in English. Translated versions are available for Spanish (`/es/`), Russian (`/ru/`), Japanese (`/ja/`), and Korean (`/ko/`).
+
+## Optional
+
+- [GitHub](https://github.com/borchani): Borchani open-source repositories (coming soon).
+- [Twitter / X](https://x.com/borchani): Borchani updates, tips, and community on X.
+- [Contact](https://borchani.com/contact): Get in touch with the Borchani team.

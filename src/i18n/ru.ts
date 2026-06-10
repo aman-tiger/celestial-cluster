@@ -43,7 +43,7 @@ const ru: Translations = {
     privacyPolicy: 'Политика конфиденциальности',
     termsOfService: 'Условия использования',
     terms: 'Условия',
-    copyright: '&copy; 2025 Borchani. Все права защищены.',
+    copyright: '&copy; 2026 Borchani. Все права защищены.',
   },
   hero: {
     titleLine1: 'Превратите любую идею в',

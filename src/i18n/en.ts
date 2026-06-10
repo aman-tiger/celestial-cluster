@@ -43,7 +43,7 @@ const en: Translations = {
     privacyPolicy: 'Privacy Policy',
     termsOfService: 'Terms of Service',
     terms: 'Terms',
-    copyright: '&copy; 2025 Borchani. All rights reserved.',
+    copyright: '&copy; 2026 Borchani. All rights reserved.',
   },
   hero: {
     titleLine1: 'Turn any idea into a',

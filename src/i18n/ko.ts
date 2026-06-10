@@ -43,7 +43,7 @@ const ko: Translations = {
     privacyPolicy: '개인정보 처리방침',
     termsOfService: '이용 약관',
     terms: '약관',
-    copyright: '&copy; 2025 Borchani. All rights reserved.',
+    copyright: '&copy; 2026 Borchani. All rights reserved.',
   },
   hero: {
     titleLine1: '어떤 아이디어든',

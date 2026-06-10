@@ -43,7 +43,7 @@ const es: Translations = {
     privacyPolicy: 'Política de privacidad',
     termsOfService: 'Términos de servicio',
     terms: 'Términos',
-    copyright: '&copy; 2025 Borchani. Todos los derechos reservados.',
+    copyright: '&copy; 2026 Borchani. Todos los derechos reservados.',
   },
   hero: {
     titleLine1: 'Convierte cualquier idea en una',

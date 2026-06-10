@@ -43,7 +43,7 @@ const ja: Translations = {
     privacyPolicy: 'プライバシーポリシー',
     termsOfService: '利用規約',
     terms: '規約',
-    copyright: '&copy; 2025 Borchani. All rights reserved.',
+    copyright: '&copy; 2026 Borchani. All rights reserved.',
   },
   hero: {
     titleLine1: 'あらゆるアイデアを',

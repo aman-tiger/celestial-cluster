@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Borchani
+  site: 'https://borchani.com'
   base: '/'
   trailingSlash: false
 
@@ -9,22 +9,22 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Borchani — AI App Builder
+    template: '%s — Borchani'
+  description: "Build full-stack web apps with AI. Describe your idea, get production-ready React + TypeScript code in minutes. Live preview, one-click deploy."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Borchani
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
+    handle: '@borchani'
+    site: '@borchani'
     cardType: summary_large_image
 
 i18n:

@@ -17,7 +17,7 @@ const { metadata } = Astro.props;
 const locale = Astro.currentLocale ?? 'en';
 const t = useTranslations(locale);
 const headerData = getHeaderData(t, locale);
-const footerData = getFooterData(t);
+const footerData = getFooterData(t, locale);
 ---
 
 <Layout metadata={metadata}>

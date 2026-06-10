@@ -7,7 +7,9 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: 'About Borchani — AI App Builder',
+  description:
+    'We built Borchani because setting up a new project was eating too much time. Learn about the team, our values, and why we obsess over developer experience.',
 };
 ---
 
@@ -17,59 +19,60 @@ const metadata = {
   <Hero
     tagline="About us"
     image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
+      src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Borchani team working',
     }}
   >
     <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white"> Beautiful Website Templates</span>
+      We got tired of setting up projects from scratch.<br />
+      <span class="text-accent dark:text-white">So we built Borchani.</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      Borchani started with a simple frustration — too much time spent on boilerplate, config, and scaffolding
+      before a single line of real logic got written. We built an AI that handles all of that so developers can
+      spend their time on things that actually matter. Today, thousands of developers use Borchani to turn ideas
+      into running applications in minutes.
     </Fragment>
   </Hero>
 
   <!-- Stats Widget ****************** -->
 
   <Stats
-    title="Statistics about us"
+    title="Borchani by the numbers"
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { title: 'Apps built', amount: '10K+' },
+      { title: 'Developers', amount: '3K+' },
+      { title: 'UI components', amount: '50+' },
+      { title: 'Avg. build time', amount: '< 5 min' },
     ]}
   />
 
   <!-- Features3 Widget ************** -->
 
   <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
+    title="What people build with Borchani"
+    subtitle="We designed Borchani to be flexible enough for almost any web application — here is what our users ship most often."
     columns={3}
     isBeforeContent={true}
     items={[
       {
-        title: 'Educational',
+        title: 'Internal tools',
         description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
+          'Admin panels, data dashboards, approval workflows — the stuff that keeps companies running but nobody wants to spend weeks building.',
+        icon: 'tabler:tool',
       },
       {
-        title: 'Interior Design',
+        title: 'SaaS prototypes',
         description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
+          'Go from idea to clickable, deployable MVP in hours. Validate before you invest months in development.',
+        icon: 'tabler:flask',
       },
       {
-        title: 'Photography',
+        title: 'Client projects',
         description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
+          'Agencies and freelancers use Borchani to deliver projects faster without cutting corners on code quality.',
+        icon: 'tabler:briefcase',
       },
     ]}
   />
@@ -81,68 +84,68 @@ const metadata = {
     isAfterContent={true}
     items={[
       {
-        title: 'E-commerce',
+        title: 'E-commerce UIs',
         description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
+          'Product catalogs, shopping carts, checkout flows — Borchani generates complete, responsive interfaces.',
+        icon: 'tabler:shopping-cart',
       },
       {
-        title: 'Blog',
+        title: 'AI-powered apps',
         description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
+          'Chat interfaces, prompt playgrounds, AI dashboards. Borchani handles the plumbing so you focus on the intelligence layer.',
+        icon: 'tabler:robot',
       },
       {
-        title: 'Business',
+        title: 'Data apps',
         description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
+          'Charts, filterable tables, KPI boards. Give Borchani your data shape and it builds the full interactive interface.',
+        icon: 'tabler:chart-bar',
       },
       {
-        title: 'Branding',
+        title: 'Productivity tools',
         description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
+          'Kanban boards, habit trackers, note-taking apps, timers — personal tools that would take a weekend to write by hand.',
+        icon: 'tabler:checkbox',
       },
       {
-        title: 'Medical',
+        title: 'Social features',
         description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
+          'Comment threads, feeds, real-time chat. Borchani generates complete WebSocket-backed social components.',
+        icon: 'tabler:users',
       },
       {
-        title: 'Fashion Design',
+        title: 'Landing pages',
         description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
+          'Fast, SEO-ready marketing pages with clear CTAs. No builder lock-in — just clean Astro or React code you own.',
+        icon: 'tabler:layout',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
+      src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Developer working with Borchani',
     }}
   />
 
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
+    title="What we stand for"
+    subtitle="Three things we come back to whenever we make a product decision."
     items={[
       {
-        title: 'Customer-centric approach',
+        title: 'Developer experience first',
         description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
+          'We are developers ourselves. If something feels annoying to use, we fix it. Generated code should be as readable and maintainable as code written by hand.',
       },
       {
-        title: 'Constant Improvement',
+        title: 'Ship fast, fix fast',
         description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
+          'We release updates every week. When something breaks, we fix it the same day. Speed is part of how we operate — not just what we sell.',
       },
       {
-        title: 'Ethical Practices',
+        title: 'You own everything',
         description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+          'Your data, your code, your apps. We do not lock you in. Export at any time, deploy anywhere, modify freely. No strings attached.',
       },
     ]}
   />
@@ -150,29 +153,30 @@ const metadata = {
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
+    title="A few things we're proud of"
+    subtitle="We're a small team, but the product speaks for itself."
     isReversed={true}
     callToAction={{
-      text: 'See more',
-      href: '/',
+      text: 'Start building',
+      href: 'https://app.borchani.com/signup',
     }}
     items={[
       {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
+        title: 'Used in 40+ countries',
+        description:
+          'Developers from San Francisco to Singapore use Borchani to ship products faster. We did not expect the adoption to spread this quickly.',
         icon: 'tabler:globe',
       },
       {
-        title: 'Positive customer feedback and reviews',
+        title: 'Consistently rated 4.9/5',
         description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
+          'Across review platforms and user surveys, the feedback has been clear: the builder works, the code is clean, and the support is fast.',
         icon: 'tabler:message-star',
       },
       {
-        title: 'Awards and recognition as industry experts',
+        title: 'Featured in multiple developer publications',
         description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
+          'Borchani has been covered in several developer newsletters and tech blogs as a standout tool for AI-assisted development.',
         icon: 'tabler:award',
       },
     ]}
@@ -181,25 +185,25 @@ const metadata = {
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Our locations"
+    title="Where we are"
     tagline="Find us"
     columns={4}
     items={[
       {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
+        title: 'Remote first',
+        description: 'Our core team works fully remote, across multiple time zones.',
       },
       {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
+        title: 'San Francisco',
+        description: 'Company registered in California, USA.',
       },
       {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
+        title: 'Community',
+        description: 'Discord · GitHub · X (Twitter)',
       },
       {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
+        title: 'Available 24/7',
+        description: 'App uptime monitored around the clock.',
       },
     ]}
   />
@@ -207,22 +211,41 @@ const metadata = {
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Technical Support"
+    title="Get in touch"
     tagline="Contact us"
     columns={2}
     items={[
       {
         title: 'Chat with us',
         description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
+          'Join our Discord community to get help from the team and other Borchani users. Usually answered within an hour during business hours.',
+        icon: 'tabler:brand-discord',
       },
       {
-        title: 'Call us',
+        title: 'Email us',
         description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
+          'Reach out to hello@borchani.com for billing questions, enterprise inquiries, or anything else. We reply within one business day.',
+        icon: 'tabler:mail',
       },
     ]}
   />
+
+  <!-- JSON-LD Organization -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Borchani",
+    "url": "https://borchani.com",
+    "logo": "https://borchani.com/favicon.svg",
+    "foundingDate": "2024",
+    "description": "Borchani is an AI-powered app builder that generates production-ready full-stack web applications from natural language descriptions.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@borchani.com",
+      "contactType": "customer support"
+    },
+    "sameAs": [
+      "https://x.com/borchani"
+    ]
+  })} />
 </Layout>

@@ -7,7 +7,9 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Services',
+  title: 'What Borchani Builds — AI App Generator Capabilities',
+  description:
+    'From SaaS MVPs to internal tools and e-commerce UIs — see everything Borchani can build for you with AI. Production-ready React apps, deployed in minutes.',
 };
 ---
 
@@ -15,74 +17,83 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="Services"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
+    tagline="What we build"
+    title="One prompt away from a working app"
+    subtitle="Borchani handles the scaffolding, the boilerplate, the component wiring, and the deployment pipeline. You describe what you need — the AI does the rest."
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Try it free',
+        href: 'https://app.borchani.com/signup',
+      },
+    ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
+      src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Borchani AI builder in action',
     }}
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
+    title="App types Borchani generates"
+    subtitle="Tell Borchani what you need. It will generate the frontend, wire up the logic, and have a preview running in under five minutes."
     columns={3}
     items={[
       {
-        title: 'Educational',
+        title: 'SaaS prototypes',
         description:
-          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
-        icon: 'tabler:school',
+          'Turn your product idea into a working prototype before you invest months in development. Validate early, pivot fast.',
+        icon: 'tabler:rocket',
       },
       {
-        title: 'Interior Design',
+        title: 'Internal tools',
         description:
-          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
-        icon: 'tabler:home-star',
+          'Admin panels, approval workflows, data entry forms — the tools teams need but engineering never has time to build.',
+        icon: 'tabler:tool',
       },
       {
-        title: 'Photography',
-        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
-        icon: 'tabler:photo',
-      },
-      {
-        title: 'E-commerce',
+        title: 'E-commerce UIs',
         description:
-          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
+          'Product pages, shopping carts, checkout flows. Complete, responsive storefronts without a single line of manual CSS.',
         icon: 'tabler:shopping-cart',
       },
       {
-        title: 'Blog',
+        title: 'Dashboards & analytics',
         description:
-          'With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs.',
-        icon: 'tabler:article',
+          'Live charts, filterable tables, KPI cards. Hand Borchani a data shape and it builds the interactive interface around it.',
+        icon: 'tabler:chart-bar',
       },
       {
-        title: 'Business',
+        title: 'AI-powered apps',
         description:
-          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
-        icon: 'tabler:building-store',
+          'Chat interfaces, document summarizers, prompt playgrounds — Borchani generates the shell; you plug in your AI models.',
+        icon: 'tabler:robot',
       },
       {
-        title: 'Branding',
+        title: 'Productivity apps',
         description:
-          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
-        icon: 'tabler:arrow-big-up-lines',
+          'Habit trackers, kanban boards, time managers. Personal tools that would eat a weekend to build by hand.',
+        icon: 'tabler:checkbox',
       },
       {
-        title: 'Medical',
-        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
-        icon: 'tabler:vaccine',
+        title: 'Social features',
+        description:
+          'Comment threads, user feeds, real-time notifications — Borchani generates WebSocket-backed social components out of the box.',
+        icon: 'tabler:users',
       },
       {
-        title: 'Fashion Design',
+        title: 'Client-facing portals',
         description:
-          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
-        icon: 'tabler:tie',
+          'Customer dashboards, status pages, document upload portals. Branded, polished, and ready to deploy.',
+        icon: 'tabler:layout-dashboard',
+      },
+      {
+        title: 'Landing pages',
+        description:
+          'Fast-loading, SEO-ready marketing pages with clean semantic HTML — no page builder lock-in, just code you own.',
+        icon: 'tabler:layout',
       },
     ]}
   />
@@ -93,37 +104,39 @@ const metadata = {
     isReversed
     items={[
       {
-        title: 'High-Quality Designs',
+        title: 'Readable, maintainable code',
         description:
-          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
-        icon: 'tabler:wand',
+          'Borchani does not generate messy spaghetti. Every file follows the same conventions, every component is typed, every function is named clearly.',
+        icon: 'tabler:code',
       },
       {
-        title: 'Customization Tools',
+        title: 'shadcn/ui components built in',
         description:
-          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
-        icon: 'tabler:settings',
+          'Every app comes pre-wired with the full shadcn/ui library — 50+ accessible, customizable components ready to use.',
+        icon: 'tabler:components',
       },
       {
-        title: 'Pre-Designed Elements',
+        title: 'Live sandbox preview',
         description:
-          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
-        icon: 'tabler:presentation',
+          'See your app running in real time as Borchani generates it. Catch problems early, steer the build through chat.',
+        icon: 'tabler:eye',
       },
       {
-        title: 'Preview and Mockup Views',
+        title: 'One-click GitHub export',
         description:
-          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
-        icon: 'tabler:carousel-horizontal',
+          'Push the entire repo to GitHub with a single click. Clean commit history, proper .gitignore, ready for your CI/CD pipeline.',
+        icon: 'tabler:brand-github',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Features Image',
+      src: 'https://images.unsplash.com/photo-1555066931-4365d14bab5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80',
+      alt: 'Borchani code quality',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        The code is actually good
+      </h3>
     </Fragment>
   </Content>
 
@@ -133,77 +146,82 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Time Savings',
+        title: 'Hours saved per project',
         description:
-          'Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks.',
+          'No more setting up Vite configs, installing Tailwind, configuring TypeScript paths, or wiring up a router. Borchani handles all of it.',
         icon: 'tabler:clock',
       },
       {
-        title: 'Professional Appearance',
+        title: 'Ship before competitors',
         description:
-          'Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience.',
-        icon: 'tabler:school',
+          'The team that validates fastest wins. Borchani compresses weeks of frontend work into a single afternoon.',
+        icon: 'tabler:bolt',
       },
       {
-        title: 'Cost-Efficiency',
+        title: 'No designer required',
         description:
-          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
-        icon: 'tabler:coin',
+          'Borchani generates polished UIs using shadcn/ui and Tailwind. The result looks professional without a single Figma file.',
+        icon: 'tabler:palette',
       },
       {
-        title: 'Instant Download',
+        title: 'Deploy anywhere',
         description:
-          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
-        icon: 'tabler:file-download',
+          'The generated code is standard React + Vite. Deploy to Vercel, Netlify, Cloudflare, AWS, or your own server — your choice.',
+        icon: 'tabler:cloud-upload',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Benefits Image',
+      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80',
+      alt: 'Development speed with Borchani',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Benefits</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Why teams switch to Borchani
+      </h3>
     </Fragment>
   </Content>
 
   <!-- Testimonials Widget *********** -->
 
   <Testimonials
-    title="Words from real customers"
+    title="What developers say"
     testimonials={[
       {
-        testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
-        name: 'Emily Kennedy',
-        job: 'Front-end developer',
+        testimonial:
+          'I shipped an MVP for a client in two days using Borchani. The generated code was clean enough that I could hand it off without rewriting a thing. That has never happened with any other tool.',
+        name: 'James Holloway',
+        job: 'Freelance developer',
         image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Emily Kennedy Image',
+          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+          alt: 'James Holloway',
         },
       },
       {
-        testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
-        name: 'Sarah Hansen',
-        job: 'Photographer',
+        testimonial:
+          'Our ops team needed a custom dashboard and the dev backlog was three months deep. I described it to Borchani, iterated for an hour through chat, and had something production-ready by the end of the day.',
+        name: 'Priya Mehta',
+        job: 'Head of Operations, TechScale',
         image: {
-          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Sarah Hansen Image',
+          src: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+          alt: 'Priya Mehta',
         },
       },
       {
-        testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
-        name: 'Mark Wilkinson',
-        job: 'Small business owner',
+        testimonial:
+          "I'm a designer, not a developer. Borchani let me actually build the thing I was designing instead of waiting on engineers. The code it generated was good enough that our backend dev just plugged in the API.",
+        name: 'Carlos Vega',
+        job: 'Product designer, Nomad Labs',
         image: {
-          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Mark Wilkinson Image',
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+          alt: 'Carlos Vega',
         },
       },
     ]}
     callToAction={{
       target: '_blank',
-      text: 'More testimonials...',
-      href: 'https://github.com/arthelokyo/astrowind',
+      text: 'Read more stories',
+      href: '/about',
       icon: 'tabler:chevron-right',
     }}
   />
@@ -214,11 +232,12 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Start exploring',
-        href: '/',
+        text: 'Start building free',
+        href: 'https://app.borchani.com/signup',
+        target: '_blank',
       },
     ]}
-    title="Dive into our template collection"
-    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
+    title="What do you want to build?"
+    subtitle="Describe it. Borchani will have a working preview running before your next meeting."
   />
 </Layout>

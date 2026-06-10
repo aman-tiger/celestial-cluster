@@ -71,25 +71,27 @@ const chips = [
     <form id="borchani-prompt-form" class="mt-8 sm:mt-10 max-w-2xl mx-auto" novalidate>
       <label for="borchani-prompt-input" class="sr-only">Describe the app you want to build</label>
       <div
-        class="group flex items-end gap-2 p-2 sm:p-2.5 rounded-2xl bg-white dark:bg-slate-900/70 border border-gray-200 dark:border-white/10 shadow-xl shadow-gray-900/8 dark:shadow-black/40 backdrop-blur transition focus-within:border-primary/60 focus-within:ring-4 focus-within:ring-primary/15"
+        class="group flex flex-col gap-2 p-3 sm:p-4 rounded-2xl bg-white dark:bg-slate-900/70 border border-gray-200 dark:border-white/10 shadow-xl shadow-gray-900/8 dark:shadow-black/40 backdrop-blur transition focus-within:border-primary/60 focus-within:ring-4 focus-within:ring-primary/15"
       >
         <textarea
           id="borchani-prompt-input"
           name="q"
-          rows="2"
+          rows="7"
           autocomplete="off"
           enterkeyhint="go"
-          placeholder="Describe the app you want to build…"
-          class="flex-1 resize-none max-h-44 px-3 py-2.5 bg-transparent text-base sm:text-lg text-default dark:text-white placeholder:text-muted/60 dark:placeholder:text-slate-500 focus:outline-none"
+          placeholder="Describe the app you want to build…&#10;&#10;Example: Build a SaaS task manager with user auth, a Kanban board, and a team dashboard."
+          class="flex-1 resize-none min-h-[180px] max-h-[400px] px-3 py-3 bg-transparent text-base sm:text-lg text-default dark:text-white placeholder:text-muted/50 dark:placeholder:text-slate-500 focus:outline-none leading-relaxed"
         ></textarea>
-        <button
-          type="submit"
-          aria-label="Start building with Borchani"
-          class="shrink-0 inline-flex items-center justify-center gap-2 px-4 h-11 rounded-xl bg-primary text-white text-sm font-semibold shadow-sm transition hover:opacity-90 active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/30"
-        >
-          Build
-          <Icon name="tabler:arrow-right" class="w-4 h-4" aria-hidden="true" />
-        </button>
+        <div class="flex justify-end">
+          <button
+            type="submit"
+            aria-label="Start building with Borchani"
+            class="inline-flex items-center justify-center gap-2 px-5 h-11 rounded-xl bg-primary text-white text-sm font-semibold shadow-sm transition hover:opacity-90 active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/30"
+          >
+            Build
+            <Icon name="tabler:arrow-right" class="w-4 h-4" aria-hidden="true" />
+          </button>
+        </div>
       </div>
     </form>
 

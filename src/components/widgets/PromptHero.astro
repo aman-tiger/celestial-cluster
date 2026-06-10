@@ -1,0 +1,162 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const chips = [
+  'Build a SaaS with user auth',
+  'Launch an e-commerce store',
+  'Create an internal dashboard',
+  'Ship a mobile-first booking app',
+];
+---
+
+<section
+  class="relative isolate overflow-hidden flex items-center justify-center min-h-[100svh] md:-mt-[76px] not-prose"
+>
+  <!-- Background blobs -->
+  <div class="absolute inset-0 -z-10" aria-hidden="true">
+    <div
+      class="absolute left-1/2 -top-40 -translate-x-1/2 w-[64rem] h-[64rem] max-w-none rounded-full blur-3xl opacity-45 dark:opacity-25 bg-gradient-to-tr from-primary/30 via-accent/20 to-transparent"
+    >
+    </div>
+    <div
+      class="absolute right-[-8%] bottom-[-20%] w-[40rem] h-[40rem] rounded-full blur-3xl opacity-30 dark:opacity-20 bg-gradient-to-tl from-accent/25 to-transparent"
+    >
+    </div>
+  </div>
+
+  <div class="relative w-full max-w-3xl mx-auto px-4 sm:px-6 pt-28 md:pt-36 pb-16 text-center">
+
+    <!-- Badge -->
+    <p
+      class="inline-flex items-center gap-2 mb-6 px-3.5 py-1.5 rounded-full text-sm font-medium text-muted dark:text-slate-300 bg-white/60 dark:bg-white/5 border border-gray-200/70 dark:border-white/10 backdrop-blur"
+    >
+      <Icon name="tabler:sparkles" class="w-4 h-4 text-primary" aria-hidden="true" />
+      #1 vibe coding platform for builders
+    </p>
+
+    <!-- H1 -->
+    <h1
+      class="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight font-heading text-default dark:text-white"
+    >
+      What will you ship today?<br class="hidden sm:inline" />
+      <span class="text-primary dark:text-blue-400">Borchani builds it for you.</span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="mt-5 sm:mt-6 text-lg sm:text-xl text-muted dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
+      Describe your app in plain English. Borchani generates the full stack — React, TypeScript,
+      database, auth, deploy. No coding required.
+    </p>
+
+    <!-- TL;DR benefits (AEO) -->
+    <ul
+      class="mt-6 inline-flex flex-col sm:flex-row gap-3 sm:gap-6 text-sm text-muted dark:text-slate-400 text-left mx-auto"
+      aria-label="Key benefits of Borchani vibe coding platform"
+    >
+      <li class="flex items-center gap-2">
+        <Icon name="tabler:check" class="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
+        Full-stack: frontend + backend + DB
+      </li>
+      <li class="flex items-center gap-2">
+        <Icon name="tabler:check" class="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
+        Live preview, instant deploy
+      </li>
+      <li class="flex items-center gap-2">
+        <Icon name="tabler:check" class="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
+        Free to start, no credit card
+      </li>
+    </ul>
+
+    <!-- Prompt input -->
+    <form id="borchani-prompt-form" class="mt-8 sm:mt-10 max-w-2xl mx-auto" novalidate>
+      <label for="borchani-prompt-input" class="sr-only">Describe the app you want to build</label>
+      <div
+        class="group flex items-end gap-2 p-2 sm:p-2.5 rounded-2xl bg-white dark:bg-slate-900/70 border border-gray-200 dark:border-white/10 shadow-xl shadow-gray-900/8 dark:shadow-black/40 backdrop-blur transition focus-within:border-primary/60 focus-within:ring-4 focus-within:ring-primary/15"
+      >
+        <textarea
+          id="borchani-prompt-input"
+          name="q"
+          rows="2"
+          autocomplete="off"
+          enterkeyhint="go"
+          placeholder="Describe the app you want to build…"
+          class="flex-1 resize-none max-h-44 px-3 py-2.5 bg-transparent text-base sm:text-lg text-default dark:text-white placeholder:text-muted/60 dark:placeholder:text-slate-500 focus:outline-none"
+        ></textarea>
+        <button
+          type="submit"
+          aria-label="Start building with Borchani"
+          class="shrink-0 inline-flex items-center justify-center gap-2 px-4 h-11 rounded-xl bg-primary text-white text-sm font-semibold shadow-sm transition hover:opacity-90 active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/30"
+        >
+          Build
+          <Icon name="tabler:arrow-right" class="w-4 h-4" aria-hidden="true" />
+        </button>
+      </div>
+    </form>
+
+    <!-- Prompt chips (role-based, Bolt style) -->
+    <ul class="mt-4 flex flex-wrap items-center justify-center gap-2" aria-label="Example app ideas for Borchani">
+      {
+        chips.map((chip) => (
+          <li>
+            <button
+              type="button"
+              data-prompt-chip
+              class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-sm text-muted dark:text-slate-300 bg-white/70 dark:bg-white/5 border border-gray-200/80 dark:border-white/10 backdrop-blur transition hover:border-primary/50 hover:text-default dark:hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/20"
+            >
+              <Icon name="tabler:bolt" class="w-3.5 h-3.5 opacity-50" aria-hidden="true" />
+              {chip}
+            </button>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Social proof -->
+    <p class="mt-10 text-sm text-muted dark:text-slate-500">
+      Trusted by <strong class="text-default dark:text-slate-300 font-semibold">12,000+</strong> builders and founders
+      &nbsp;·&nbsp; <strong class="text-default dark:text-slate-300 font-semibold">50,000+</strong> apps shipped on Borchani
+    </p>
+  </div>
+</section>
+
+<script>
+  const BORCHANI_URL = 'https://borchani.com/build';
+
+  const form = document.getElementById('borchani-prompt-form') as HTMLFormElement | null;
+  const input = document.getElementById('borchani-prompt-input') as HTMLTextAreaElement | null;
+
+  if (form && input) {
+    const go = (value: string) => {
+      const q = value.trim();
+      const url = new URL(BORCHANI_URL);
+      if (q) url.searchParams.set('q', q);
+      window.location.href = url.toString();
+    };
+
+    const autoGrow = () => {
+      input.style.height = 'auto';
+      input.style.height = `${input.scrollHeight}px`;
+    };
+    input.addEventListener('input', autoGrow);
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        form.requestSubmit();
+      }
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      go(input.value);
+    });
+
+    document.querySelectorAll<HTMLButtonElement>('[data-prompt-chip]').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        input.value = chip.textContent?.trim() ?? '';
+        autoGrow();
+        input.focus();
+      });
+    });
+  }
+</script>

@@ -10,20 +10,20 @@ export function getHeaderData(t: Translations, locale: string) {
         links: [
           { text: t.nav.features, href: `${prefix}/#features` },
           { text: t.nav.howItWorks, href: `${prefix}/#how-it-works` },
-          { text: t.nav.whatWeBuild, href: getPermalink('/services') },
-          { text: t.nav.caseStudies, href: getPermalink('/case-studies') },
+          { text: t.nav.whatWeBuild, href: `${prefix}/services` },
+          { text: t.nav.caseStudies, href: `${prefix}/case-studies` },
         ],
       },
       {
         text: t.nav.pricing,
-        href: getPermalink('/pricing'),
+        href: `${prefix}/pricing`,
       },
       {
         text: t.nav.resources,
         links: [
-          { text: t.nav.blog, href: getBlogPermalink() },
-          { text: t.nav.about, href: getPermalink('/about') },
-          { text: t.nav.contact, href: getPermalink('/contact') },
+          { text: t.nav.blog, href: `${prefix}/blog` },
+          { text: t.nav.about, href: `${prefix}/about` },
+          { text: t.nav.contact, href: `${prefix}/contact` },
         ],
       },
     ],
@@ -31,15 +31,16 @@ export function getHeaderData(t: Translations, locale: string) {
   };
 }
 
-export function getFooterData(t: Translations) {
+export function getFooterData(t: Translations, locale: string = 'en') {
+  const prefix = locale === 'en' ? '' : `/${locale}`;
   return {
     links: [
       {
         title: t.footer.productTitle,
         links: [
-          { text: t.footer.features, href: getPermalink('/#features') },
-          { text: t.footer.howItWorks, href: getPermalink('/#how-it-works') },
-          { text: t.footer.pricing, href: getPermalink('/pricing') },
+          { text: t.footer.features, href: `${prefix}/#features` },
+          { text: t.footer.howItWorks, href: `${prefix}/#how-it-works` },
+          { text: t.footer.pricing, href: `${prefix}/pricing` },
           { text: t.footer.changelog, href: '#' },
           { text: t.footer.roadmap, href: '#' },
         ],
@@ -59,14 +60,14 @@ export function getFooterData(t: Translations) {
           { text: t.footer.helpCenter, href: '#' },
           { text: t.footer.community, href: '#' },
           { text: t.footer.status, href: '#' },
-          { text: t.footer.contactUs, href: getPermalink('/contact') },
+          { text: t.footer.contactUs, href: `${prefix}/contact` },
         ],
       },
       {
         title: t.footer.companyTitle,
         links: [
-          { text: t.footer.about, href: getPermalink('/about') },
-          { text: t.footer.blog, href: getBlogPermalink() },
+          { text: t.footer.about, href: `${prefix}/about` },
+          { text: t.footer.blog, href: `${prefix}/blog` },
           { text: t.footer.careers, href: '#' },
           { text: t.footer.privacyPolicy, href: getPermalink('/privacy') },
           { text: t.footer.termsOfService, href: getPermalink('/terms') },
@@ -79,7 +80,6 @@ export function getFooterData(t: Translations) {
     ],
     socialLinks: [
       { ariaLabel: 'X / Twitter', icon: 'tabler:brand-x', href: 'https://x.com/borchani' },
-      { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: '#' },
       { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: '#' },
       { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     ],
@@ -90,4 +90,4 @@ export function getFooterData(t: Translations) {
 // Backward-compatible English exports (used by any file that hasn't been updated yet)
 import en from './i18n/en';
 export const headerData = getHeaderData(en, 'en');
-export const footerData = getFooterData(en);
+export const footerData = getFooterData(en, 'en');

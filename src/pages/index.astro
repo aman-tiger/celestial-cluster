@@ -1,309 +1,108 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
-
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
+import PageLayout from '~/layouts/PageLayout.astro';
+import PromptHero from '~/components/widgets/PromptHero.astro';
+import Stats from '~/components/widgets/Stats.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Borchani for creating websites with Astro + Tailwind CSS',
+  title: 'Borchani — #1 Vibe Coding Platform | Build Full-Stack Apps with AI',
+  description:
+    'The #1 vibe coding platform. Describe your app, Borchani builds React + TypeScript full-stack in minutes. Live preview, one-click deploy. Free to start.',
   ignoreTitleTemplate: true,
 };
 ---
 
-<Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+<PageLayout metadata={metadata}>
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: '#features' },
+  <!-- ─── Hero — prompt input (Lovable / Bolt style) ─── -->
+  <PromptHero />
+
+  <!-- ─── Stats strip ─── -->
+  <Stats
+    stats={[
+      { amount: '50K+', title: 'Apps shipped' },
+      { amount: '12K+', title: 'Active builders' },
+      { amount: '3 min', title: 'From idea to preview' },
+      { amount: '99.9%', title: 'Uptime SLA' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
-  >
-    <Fragment slot="title">
-      Borchani for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white"> Astro 5.0</span> + Tailwind CSS
-    </Fragment>
+  />
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
-    </Fragment>
-  </Hero>
-
-  <!-- Note Widget ******************* -->
-
-  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
-
-  <!-- Features Widget *************** -->
-
+  <!-- ─── Core features — benefit-first (Bolt style) ─── -->
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
+    tagline="Why Borchani"
+    title="Everything you need to ship a real app"
+    subtitle="Borchani is the only vibe coding platform that generates production-grade full-stack code — not just a frontend prototype."
+    columns={3}
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'Ship full-stack apps from one prompt',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
+          'Frontend, backend, database schema, and API routes generated together. No gluing three tools into one workflow.',
+        icon: 'tabler:layers-union',
       },
       {
-        title: 'Ready-to-use Components',
+        title: 'See it working before you commit',
         description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+          'Your app runs live in a real browser sandbox as Borchani builds. Click every screen, catch gaps early.',
+        icon: 'tabler:device-laptop',
       },
       {
-        title: 'Best Practices',
+        title: 'Live URL in 30 seconds, free SSL included',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
-      },
-      {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
+          'Hit Deploy. Borchani provisions hosting, CDN, and HTTPS automatically. Share a real link in under a minute.',
         icon: 'tabler:rocket',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
+        title: 'Clean, typed code you actually own',
         description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
+          'Every app is React + TypeScript — no proprietary lock-in. Export the full source and deploy it anywhere, anytime.',
+        icon: 'tabler:brand-typescript',
       },
       {
-        title: 'Open to new ideas and contributions',
+        title: 'Auth + Postgres pre-wired, zero setup',
         description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
+          'User authentication and a real database are included by default. No third-party accounts, no config files.',
+        icon: 'tabler:database',
+      },
+      {
+        title: '"Make the table sortable" — done in seconds',
+        description:
+          'Keep iterating in plain English after the first build. Borchani applies surgical changes without breaking what works.',
+        icon: 'tabler:messages',
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
-    items={[
-      {
-        title: 'Built on top of Astro 5.0',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
-      },
-      {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
-      },
-      {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
-
-  <!-- Features2 Widget ************** -->
-
+  <!-- ─── Role-based positioning (Bolt persona section) ─── -->
   <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
+    tagline="Whatever your role"
+    title="Borchani gives you superpowers"
+    subtitle="Whether you're a founder, developer, or agency — vibe coding changes how fast you ship."
     items={[
       {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
+        title: 'For founders',
         description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
+          'Go from idea to working MVP in a weekend. Validate before you hire. Ship before you fundraise.',
+        icon: 'tabler:rocket',
       },
       {
-        title: 'Features',
+        title: 'For developers',
         description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
+          'Prototype and validate ideas in hours, not sprints. Let Borchani handle boilerplate while you focus on logic.',
+        icon: 'tabler:code',
       },
       {
-        title: 'Content',
+        title: 'For agencies',
         description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
+          'Deliver client projects 10× faster. Generate the scaffold in minutes, hand off clean code at the end.',
+        icon: 'tabler:briefcase',
       },
     ]}
   >
@@ -312,88 +111,154 @@ const metadata = {
     </Fragment>
   </Features2>
 
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
+  <!-- ─── How it works — 3 steps (vibe coding language) ─── -->
+  <Steps
+    id="how-it-works"
+    tagline="How it works"
+    title="From idea to deployed app in 3 steps"
+    subtitle="No tutorials, no boilerplate. Just describe what you want."
     items={[
       {
-        title: 'Why AstroWind?',
+        title: 'Step 1: <span class="font-normal">Describe your app</span>',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          'Type your idea like you\'d explain it to a developer. Borchani handles architecture, routing, and data models automatically.',
+        icon: 'tabler:pencil',
       },
       {
-        title: 'What do I need to start?',
+        title: 'Step 2: <span class="font-normal">Vibe-check in live preview</span>',
         description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+          'Your app runs in a real browser sandbox. Click through every screen. Refine anything by just asking — "make the navbar sticky", "add a dark mode toggle".',
+        icon: 'tabler:eye',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: 'Step 3: <span class="font-normal">Ship it</span>',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+          'One click deploys to a live URL with SSL, CDN, and monitoring. Share it with users, investors, or clients immediately.',
+        icon: 'tabler:rocket',
       },
     ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Developer using Borchani vibe coding platform to build a web app',
+    }}
   />
 
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    actions={[
+  <!-- ─── Testimonials ─── -->
+  <Testimonials
+    title="What builders say about Borchani"
+    subtitle="From solo founders to dev teams — real people shipping real products."
+    testimonials={[
       {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        testimonial:
+          'I launched my SaaS MVP in a weekend. No backend experience, no DevOps. Borchani just handled everything.',
+        name: 'Marco R.',
+        job: 'Founder, Trackflow',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+          alt: 'Marco R., founder who shipped his SaaS using Borchani vibe coding',
+        },
+      },
+      {
+        testimonial:
+          'We replaced a 3-week sprint with a 2-hour Borchani session. The code quality was good enough to ship straight to production.',
+        name: 'Aiko T.',
+        job: 'Engineering Lead, Stackline',
+        image: {
+          src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+          alt: 'Aiko T., engineering lead who used Borchani to accelerate delivery',
+        },
+      },
+      {
+        testimonial:
+          'Borchani is the first vibe coding tool where the output is actually maintainable TypeScript. Our devs were happy to take it over.',
+        name: 'Daniel K.',
+        job: 'CTO, Novu Labs',
+        image: {
+          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+          alt: 'Daniel K., CTO who adopted Borchani for production app development',
+        },
       },
     ]}
   >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
+  </Testimonials>
 
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+  <!-- ─── FAQs (SEO + FAQPage schema) ─── -->
+  <FAQs
+    id="faq"
+    title="Frequently asked questions"
+    subtitle="Everything you need to know before you start building."
+    tagline="FAQ"
+    classes={{ container: 'max-w-4xl' }}
+    items={[
+      {
+        title: 'What is vibe coding?',
+        description:
+          'Vibe coding means building software by describing what you want in plain English, letting AI handle the code. Borchani is the most complete vibe coding platform: it generates the full stack, runs a live preview, and deploys with one click.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'What is Borchani?',
+        description:
+          'Borchani is an AI app builder and vibe coding platform that generates production-ready full-stack web applications from plain-English prompts. You describe your idea, Borchani writes React + TypeScript code, wires up a database, and deploys it — no coding required.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'How is Borchani different from Lovable or Bolt?',
+        description:
+          'Borchani focuses on full-stack output quality: typed code, built-in auth, a real Postgres database, and clean exports you can take to any host. No proprietary lock-in — you own the code and can deploy it anywhere.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'Do I need to know how to code to use Borchani?',
+        description:
+          'No. Borchani is designed for founders, designers, and product people. If you can write an email, you can build an app on Borchani. Developers also use it to skip boilerplate and prototype faster.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'Can I export and own the source code?',
+        description:
+          'Yes. Every app you build belongs to you. Export the full React + TypeScript source at any time and deploy it to Vercel, Netlify, or your own server. Borchani never holds your code hostage.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'How much does Borchani cost?',
+        description:
+          'Borchani is free to start — build, preview, and iterate for free. Paid plans add custom domains, higher compute, team collaboration, and priority support. No credit card required to begin.',
+        icon: 'tabler:chevrons-right',
+      },
+    ]}
+  />
+
+  <!-- ─── Latest blog posts ─── -->
+  <BlogLatestPosts
+    id="blog"
+    title="Guides, comparisons, and tutorials"
+    information="Learn how to build faster with vibe coding, compare AI app builders, and get step-by-step guides for shipping your idea with Borchani."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </CallToAction>
-</Layout>
+  </BlogLatestPosts>
+
+  <!-- ─── Final CTA ─── -->
+  <CallToAction
+    title="Start vibe coding for free"
+    subtitle="No credit card. No setup. First app live in under 10 minutes."
+    actions={[
+      {
+        variant: 'primary',
+        text: "Build with Borchani — it's free",
+        href: 'https://borchani.com/build',
+        target: '_blank',
+      },
+      {
+        text: 'See examples',
+        href: '/blog',
+      },
+    ]}
+  />
+
+</PageLayout>

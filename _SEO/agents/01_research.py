@@ -119,13 +119,81 @@ def mark_as_published(csv_path: str, keyword: str) -> None:
         writer.writerows(rows)
 
 
+def pick_keyword_from_topic(topic: str) -> dict | None:
+    """Pick a random unused keyword from a specific topic folder."""
+    import math
+    category_folder = KEYWORDS_DIR / topic
+    own_csv = category_folder / "own.csv"
+    if not own_csv.exists():
+        return None
+
+    candidates = []
+    with open(own_csv, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            keyword = row.get("keyword", "").strip()
+            if not keyword or row.get("published", "").strip():
+                continue
+            try:
+                priority = int(row.get("priority", 5) or 5)
+            except ValueError:
+                priority = 5
+            try:
+                volume = int(row.get("volume", 0) or 0)
+            except ValueError:
+                volume = 0
+
+            competitors = []
+            for i in range(1, 4):
+                url = row.get(f"Ссылка конкурента {i}", "").strip()
+                if url:
+                    competitors.append({
+                        "url": url,
+                        "title": row.get(f"Заголовок конкурента {i}", "").strip(),
+                        "snippet": row.get(f"Сниппет конкурента {i}", "").strip(),
+                    })
+
+            candidates.append({
+                "keyword": keyword,
+                "category": topic,
+                "content_dir": CATEGORY_DIR_MAP.get(topic, "blog"),
+                "slug": slugify(keyword),
+                "volume": volume,
+                "priority": priority,
+                "kd": row.get("kd", ""),
+                "intent": row.get("intent", ""),
+                "seed": row.get("seed", ""),
+                "competitors": competitors,
+                "csv_path": str(own_csv),
+                "csv_keyword": keyword,
+            })
+
+    if not candidates:
+        return None
+
+    weights = [max((10 - c["priority"]) * math.log(c["volume"] + 2), 0.1) for c in candidates]
+    return random.choices(candidates, weights=weights, k=1)[0]
+
+
+def run_for_topic(topic: str) -> dict | None:
+    """Run research for a specific topic folder."""
+    result = pick_keyword_from_topic(topic)
+    if not result:
+        return None
+    return _enrich(result)
+
+
 def run() -> dict:
     result = pick_keyword()
     if not result:
         print("No unused keywords found.", file=sys.stderr)
         sys.exit(1)
 
-    # Add LSI keywords from questions.csv in the same folder
+    return _enrich(result)
+
+
+def _enrich(result: dict) -> dict:
+    """Add LSI keywords and date to a keyword dict."""
     questions_csv = Path(result["csv_path"]).parent / "questions.csv"
     lsi_keywords = []
     if questions_csv.exists():
@@ -140,8 +208,9 @@ def run() -> dict:
 
     result["lsi_keywords"] = lsi_keywords[:15]
     result["today"] = date.today().isoformat()
+    result["utm_campaign"] = result.get("slug", "borchani")
 
-    print(f"[Agent 1] Picked keyword: {result['keyword']} (category: {result['category']}, volume: {result['volume']})")
+    print(f"[Agent 1] Picked: {result['keyword']} (category: {result['category']}, vol: {result['volume']})")
     return result
 
 

@@ -47,8 +47,17 @@ const {
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
 const isRu = Astro.url.pathname.startsWith('/ru');
+
+// Pages that have a Russian equivalent — everything else falls back to /ru/blog
+const RU_PAGES = ['/', '/about', '/pricing', '/contact', '/services', '/case-studies', '/blog'];
+const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+
 const enUrl = isRu ? Astro.url.pathname.replace(/^\/ru/, '') || '/' : Astro.url.pathname;
-const ruUrl = isRu ? Astro.url.pathname : '/ru' + (Astro.url.pathname === '/' ? '' : Astro.url.pathname);
+const ruUrl = isRu
+  ? Astro.url.pathname
+  : RU_PAGES.includes(normalizedPath)
+    ? '/ru' + (normalizedPath === '/' ? '' : normalizedPath)
+    : '/ru/blog';
 ---
 
 <header

@@ -1,7 +1,7 @@
 ---
 publishDate: 2025-03-25T00:00:00Z
-title: From Idea to Deployed App — A Complete Borchani Walkthrough
-excerpt: A step-by-step walkthrough of building and deploying a real application with Borchani, from the first prompt to a live URL. No shortcuts, no filler — just what actually happens.
+title: From Idea to Deployed App  -  A Complete Borchani Walkthrough
+excerpt: A step-by-step walkthrough of building and deploying a real application with Borchani, from the first prompt to a live URL. No shortcuts, no filler  -  just what actually happens.
 image: https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80
 category: Tutorials
 tags:
@@ -13,7 +13,7 @@ metadata:
   canonical: https://borchani.com/from-idea-to-deployed-app-borchani-walkthrough
 ---
 
-The best way to understand a tool is to watch someone use it on something real. This walkthrough builds a task management application from scratch — a project tracker with multiple task lists, a kanban board view, and a simple team member field — and deploys it to a live URL. The whole process takes about 45 minutes the first time you try it, and 15 minutes once you've done it before.
+The best way to understand a tool is to watch someone use it on something real. This walkthrough builds a task management application from scratch. It's a project tracker with multiple task lists, a kanban board view, and a simple team member field, deployed to a live URL. The whole process takes about 45 minutes the first time you try it, and 15 minutes once you've done it before.
 
 ## The project: a kanban-based project tracker
 
@@ -26,7 +26,7 @@ Here's what we're building:
 - A modal to create and edit tasks
 - Dark mode toggle
 
-This is a real app — not a toy. It's the kind of thing you'd actually use, and it has enough complexity to show what Borchani can and can't do.
+This is a real app. Not a toy. It's the kind of thing you'd actually use, and it has enough complexity to show what Borchani can and can't do.
 
 ## Step 1: Write the initial prompt
 
@@ -34,7 +34,7 @@ Open Borchani and type your first message. Here's the exact prompt used for this
 
 > Build a project management app. On the left, a sidebar with a list of project names. I should be able to click a project to open it. The main area shows a kanban board with three columns: Backlog, In Progress, and Done. Each column has task cards. Each task card shows the task title, an assignee name, and a due date. Cards should be draggable between columns. There should be a button to add a new task, which opens a modal with fields for title, description, assignee, and due date. Include a dark mode toggle in the top right corner. Use a clean, professional design.
 
-This is a good prompt because it covers: the main layout, the data model (what fields a task has), the interactions (drag-drop, modal, dark mode), and the aesthetic direction.
+This is a good prompt because it covers the main layout, the data model (what fields a task has), the interactions (drag-drop, modal, dark mode), and the aesthetic direction.
 
 **What not to do:** Don't write a single sentence like "build me a project manager." You'll get something vague and you'll spend more time correcting it than if you'd written a detailed prompt upfront.
 
@@ -43,11 +43,11 @@ This is a good prompt because it covers: the main layout, the data model (what f
 Once you submit, Borchani starts generating. In the first 30 seconds or so, you'll see:
 
 - The project scaffold set up (Vite config, TypeScript paths, Tailwind config)
-- The main layout component created — sidebar + content area
+- The main layout component created, with sidebar and content area
 - The sidebar component with a hardcoded list of sample projects
 - The kanban board structure with three columns
 
-The live preview updates in real time. By the two-minute mark, you should have something that looks recognizably like a project management tool — even if it's not finished yet.
+The live preview updates in real time. By the two-minute mark, you should have something that looks recognizably like a project management tool, even if it's not finished yet.
 
 Don't interrupt unless something is clearly wrong. Let the first generation run to completion. It's tempting to jump in, but the AI has a plan and partial interruptions can confuse it.
 
@@ -118,10 +118,10 @@ Approximately 45 seconds later, you have a live URL.
 
 ## What this cost
 
-This walkthrough used about 12 credits — the initial generation, the three bug fixes, the sample data request, and a few polish passes. On the Starter plan ($19/month, 150 credits), you could build something like this ten times over in a month. On Pro ($49/month, 500 credits), significantly more.
+This walkthrough used about 12 credits: the initial generation, the three bug fixes, the sample data request, and a few polish passes. On the Starter plan ($19/month, 150 credits), you could build something like this ten times over in a month. On Pro ($49/month, 500 credits), significantly more.
 
 ## What you actually learned
 
-The mechanics are simple. The skill is in the prompting. Writing a good initial description saves you four rounds of back-and-forth. Knowing when to interrupt vs. let the generation run saves time. Getting comfortable with describing what you want visually and functionally — not technically — is what the learning curve actually looks like.
+The mechanics are simple. The skill is in the prompting. Writing a good initial description saves you four rounds of back-and-forth. Knowing when to interrupt vs. let the generation run saves time. Getting comfortable with describing what you want visually and functionally, not technically, is what the learning curve actually looks like.
 
 Start with something you actually need. The feedback is more useful and the motivation to finish it is higher.

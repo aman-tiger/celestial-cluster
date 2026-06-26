@@ -27,7 +27,7 @@ export function getHeaderData(t: Translations, locale: string) {
         ],
       },
     ],
-    actions: [{ text: t.nav.getStarted, href: 'https://app.borchani.com/signup', target: '_blank' }],
+    actions: [{ text: t.nav.getStarted, href: 'https://app.borchani.com/api/auth/oauth/google', target: '_blank' }],
   };
 }
 

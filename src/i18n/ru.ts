@@ -293,6 +293,22 @@ const ru: Translations = {
   languageSwitcher: {
     label: 'Язык',
   },
+  promptHero: {
+    badge: '#1 платформа для создания приложений с ИИ',
+    h1Line1: 'Что запустите сегодня?',
+    h1Highlight: 'Borchani сделает это за вас.',
+    subtitle: 'Опишите своё приложение на русском. Borchani генерирует полный стек - React, TypeScript, база данных, авторизация, деплой. Без программирования.',
+    benefit1: 'Полный стек: фронтенд + бэкенд + БД',
+    benefit2: 'Живой предпросмотр, мгновенный деплой',
+    benefit3: 'Бесплатно, карта не нужна',
+    placeholder: 'Опишите приложение, которое хотите создать…\n\nПример: Создай SaaS-менеджер задач с авторизацией, Kanban-доской и дашбордом команды.',
+    buildBtn: 'Создать',
+    chip1: 'SaaS с авторизацией пользователей',
+    chip2: 'Интернет-магазин с каталогом',
+    chip3: 'Внутренний дашборд для команды',
+    chip4: 'Мобильное приложение для записи',
+    socialProof: 'Доверяют <strong class="text-default dark:text-slate-300 font-semibold">12 000+</strong> разработчиков и основателей &nbsp;·&nbsp; <strong class="text-default dark:text-slate-300 font-semibold">50 000+</strong> приложений запущено на Borchani',
+  },
 };
 
 export default ru;

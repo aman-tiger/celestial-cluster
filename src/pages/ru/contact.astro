@@ -1,0 +1,78 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Контакты - Borchani',
+  description:
+    'Вопросы об аккаунте, оплате или корпоративном плане? Напишите нам - отвечаем в течение одного рабочего дня.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText tagline="Контакты" title="Мы живые люди. Просто спросите." />
+
+  <ContactUs
+    id="form"
+    title="Напишите нам"
+    subtitle="Сначала проверьте FAQ - возможно, найдёте ответ быстрее. Если нет, заполните форму, и мы ответим."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Ваше имя',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Рабочий email',
+      },
+    ]}
+    textarea={{
+      label: 'Чем можем помочь?',
+    }}
+    disclaimer={{
+      label:
+        'Отправляя эту форму, вы соглашаетесь с нашей Политикой конфиденциальности. Мы используем вашу информацию только для ответа на запрос.',
+    }}
+    description="Как правило, отвечаем в течение одного рабочего дня."
+  />
+
+  <Features2
+    title="Другие способы связи"
+    items={[
+      {
+        title: 'Общие вопросы',
+        description:
+          'Доступ к аккаунту, оплата, смена плана или любые другие вопросы об использовании Borchani - напишите по email или используйте форму выше.',
+      },
+      {
+        title: 'Корпоративные запросы',
+        description:
+          'Ищете индивидуальный план, повышенные лимиты, SLA или выделенного менеджера? Напишите нам, и мы подготовим предложение.',
+      },
+      {
+        title: 'Технические проблемы',
+        description:
+          'Если сборка падает, что-то выглядит сломанным или в сгенерированном коде есть постоянная ошибка - опишите здесь, и мы разберёмся.',
+      },
+      {
+        title: 'Discord-сообщество',
+        description: 'discord.gg/borchani',
+        icon: 'tabler:brand-discord',
+      },
+      {
+        title: 'Email',
+        description: 'hello@borchani.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Базируемся в',
+        description: 'Сан-Франциско, CA - распределённая команда по всему миру',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+</Layout>

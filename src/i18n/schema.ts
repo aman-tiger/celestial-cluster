@@ -167,4 +167,20 @@ export interface Translations {
   languageSwitcher: {
     label: string;
   };
+  promptHero: {
+    badge: string;
+    h1Line1: string;
+    h1Highlight: string;
+    subtitle: string;
+    benefit1: string;
+    benefit2: string;
+    benefit3: string;
+    placeholder: string;
+    buildBtn: string;
+    chip1: string;
+    chip2: string;
+    chip3: string;
+    chip4: string;
+    socialProof: string;
+  };
 }

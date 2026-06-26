@@ -1,12 +1,31 @@
 ---
 import { Icon } from 'astro-icon/components';
+import type { Translations } from '~/i18n/schema';
 
-const chips = [
-  'Build a SaaS with user auth',
-  'Launch an e-commerce store',
-  'Create an internal dashboard',
-  'Ship a mobile-first booking app',
-];
+interface Props {
+  t?: Translations;
+}
+
+const { t } = Astro.props;
+
+const ph = t?.promptHero ?? {
+  badge: '#1 vibe coding platform for builders',
+  h1Line1: 'What will you ship today?',
+  h1Highlight: 'Borchani builds it for you.',
+  subtitle: 'Describe your app in plain English. Borchani generates the full stack - React, TypeScript, database, auth, deploy. No coding required.',
+  benefit1: 'Full-stack: frontend + backend + DB',
+  benefit2: 'Live preview, instant deploy',
+  benefit3: 'Free to start, no credit card',
+  placeholder: 'Describe the app you want to build…\n\nExample: Build a SaaS task manager with user auth, a Kanban board, and a team dashboard.',
+  buildBtn: 'Build',
+  chip1: 'Build a SaaS with user auth',
+  chip2: 'Launch an e-commerce store',
+  chip3: 'Create an internal dashboard',
+  chip4: 'Ship a mobile-first booking app',
+  socialProof: 'Trusted by <strong class="text-default dark:text-slate-300 font-semibold">12,000+</strong> builders and founders &nbsp;·&nbsp; <strong class="text-default dark:text-slate-300 font-semibold">50,000+</strong> apps shipped on Borchani',
+};
+
+const chips = [ph.chip1, ph.chip2, ph.chip3, ph.chip4];
 ---
 
 <section
@@ -31,21 +50,20 @@ const chips = [
       class="inline-flex items-center gap-2 mb-6 px-3.5 py-1.5 rounded-full text-sm font-medium text-muted dark:text-slate-300 bg-white/60 dark:bg-white/5 border border-gray-200/70 dark:border-white/10 backdrop-blur"
     >
       <Icon name="tabler:sparkles" class="w-4 h-4 text-primary" aria-hidden="true" />
-      #1 vibe coding platform for builders
+      {ph.badge}
     </p>
 
     <!-- H1 -->
     <h1
       class="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight font-heading text-default dark:text-white"
     >
-      What will you ship today?<br class="hidden sm:inline" />
-      <span class="text-primary dark:text-blue-400">Borchani builds it for you.</span>
+      {ph.h1Line1}<br class="hidden sm:inline" />
+      <span class="text-primary dark:text-blue-400">{ph.h1Highlight}</span>
     </h1>
 
     <!-- Subheadline -->
     <p class="mt-5 sm:mt-6 text-lg sm:text-xl text-muted dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-      Describe your app in plain English. Borchani generates the full stack  -  React, TypeScript,
-      database, auth, deploy. No coding required.
+      {ph.subtitle}
     </p>
 
     <!-- TL;DR benefits (AEO) -->
@@ -55,21 +73,21 @@ const chips = [
     >
       <li class="flex items-center gap-2">
         <Icon name="tabler:check" class="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
-        Full-stack: frontend + backend + DB
+        {ph.benefit1}
       </li>
       <li class="flex items-center gap-2">
         <Icon name="tabler:check" class="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
-        Live preview, instant deploy
+        {ph.benefit2}
       </li>
       <li class="flex items-center gap-2">
         <Icon name="tabler:check" class="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
-        Free to start, no credit card
+        {ph.benefit3}
       </li>
     </ul>
 
     <!-- Prompt input -->
     <form id="borchani-prompt-form" class="mt-8 sm:mt-10 max-w-2xl mx-auto" novalidate>
-      <label for="borchani-prompt-input" class="sr-only">Describe the app you want to build</label>
+      <label for="borchani-prompt-input" class="sr-only">{ph.placeholder.split('\n')[0]}</label>
       <div
         class="group flex flex-col gap-2 p-3 sm:p-4 rounded-2xl bg-white dark:bg-slate-900/70 border border-gray-200 dark:border-white/10 shadow-xl shadow-gray-900/8 dark:shadow-black/40 backdrop-blur transition focus-within:border-primary/60 focus-within:ring-4 focus-within:ring-primary/15"
       >
@@ -79,7 +97,7 @@ const chips = [
           rows="7"
           autocomplete="off"
           enterkeyhint="go"
-          placeholder="Describe the app you want to build…&#10;&#10;Example: Build a SaaS task manager with user auth, a Kanban board, and a team dashboard."
+          placeholder={ph.placeholder}
           class="flex-1 resize-none min-h-[180px] max-h-[400px] px-3 py-3 bg-transparent text-base sm:text-lg text-default dark:text-white placeholder:text-muted/50 dark:placeholder:text-slate-500 focus:outline-none leading-relaxed"
         ></textarea>
         <div class="flex justify-end">
@@ -88,14 +106,14 @@ const chips = [
             aria-label="Start building with Borchani"
             class="inline-flex items-center justify-center gap-2 px-5 h-11 rounded-xl bg-primary text-white text-sm font-semibold shadow-sm transition hover:opacity-90 active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/30"
           >
-            Build
+            {ph.buildBtn}
             <Icon name="tabler:arrow-right" class="w-4 h-4" aria-hidden="true" />
           </button>
         </div>
       </div>
     </form>
 
-    <!-- Prompt chips (role-based, Bolt style) -->
+    <!-- Prompt chips -->
     <ul class="mt-4 flex flex-wrap items-center justify-center gap-2" aria-label="Example app ideas for Borchani">
       {
         chips.map((chip) => (
@@ -114,10 +132,7 @@ const chips = [
     </ul>
 
     <!-- Social proof -->
-    <p class="mt-10 text-sm text-muted dark:text-slate-500">
-      Trusted by <strong class="text-default dark:text-slate-300 font-semibold">12,000+</strong> builders and founders
-      &nbsp;·&nbsp; <strong class="text-default dark:text-slate-300 font-semibold">50,000+</strong> apps shipped on Borchani
-    </p>
+    <p class="mt-10 text-sm text-muted dark:text-slate-500" set:html={ph.socialProof} />
   </div>
 </section>
 

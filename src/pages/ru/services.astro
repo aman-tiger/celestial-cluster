@@ -1,0 +1,231 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Что создаёт Borchani - Возможности AI App Builder',
+  description:
+    'От SaaS MVP до внутренних инструментов и e-commerce интерфейсов - всё, что Borchani может создать с помощью ИИ. Production-ready React приложения за минуты.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Что мы создаём"
+    title="Один промпт до рабочего приложения"
+    subtitle="Borchani берёт на себя scaffolding, шаблонный код, подключение компонентов и деплой. Вы описываете, что нужно - ИИ делает остальное."
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Попробовать бесплатно',
+        href: 'https://app.borchani.com/api/auth/oauth/google',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1740&q=80',
+      alt: 'Borchani AI builder в действии',
+    }}
+  />
+
+  <Features2
+    title="Типы приложений, которые генерирует Borchani"
+    subtitle="Опишите Borchani, что вам нужно. Он создаст фронтенд, подключит логику и запустит предпросмотр менее чем за пять минут."
+    columns={3}
+    items={[
+      {
+        title: 'SaaS-прототипы',
+        description:
+          'Превратите идею продукта в рабочий прототип до того, как вложите месяцы в разработку. Валидируйте рано, меняйте направление быстро.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Внутренние инструменты',
+        description:
+          'Панели администратора, рабочие процессы согласования, формы ввода данных - инструменты, которые нужны командам, но до которых у разработчиков никогда не доходят руки.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'E-commerce интерфейсы',
+        description:
+          'Страницы товаров, корзины, процессы оформления заказа. Полноценные адаптивные витрины без единой строки CSS вручную.',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'Дашборды и аналитика',
+        description:
+          'Живые графики, фильтруемые таблицы, KPI-карточки. Передайте Borchani структуру данных - он создаст интерактивный интерфейс вокруг неё.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Приложения на базе ИИ',
+        description:
+          'Чат-интерфейсы, суммаризаторы документов, площадки для промптов - Borchani генерирует оболочку, вы подключаете свои AI-модели.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Приложения для продуктивности',
+        description:
+          'Трекеры привычек, канбан-доски, тайм-менеджеры. Личные инструменты, которые вручную заняли бы целые выходные.',
+        icon: 'tabler:checkbox',
+      },
+      {
+        title: 'Социальные функции',
+        description:
+          'Ветки комментариев, ленты пользователей, уведомления в реальном времени - Borchani генерирует социальные компоненты с поддержкой WebSocket из коробки.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Клиентские порталы',
+        description:
+          'Дашборды для клиентов, страницы статуса, порталы загрузки документов. Брендированные, отполированные и готовые к деплою.',
+        icon: 'tabler:layout-dashboard',
+      },
+      {
+        title: 'Лендинги',
+        description:
+          'Быстрые, SEO-готовые маркетинговые страницы с чистым семантическим HTML - без привязки к конструктору, только ваш код.',
+        icon: 'tabler:layout',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Читаемый, поддерживаемый код',
+        description:
+          'Borchani не генерирует спагетти-код. Каждый файл следует одним и тем же соглашениям, каждый компонент типизирован, каждая функция имеет понятное имя.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Встроенные компоненты shadcn/ui',
+        description:
+          'Каждое приложение поставляется с полной библиотекой shadcn/ui - 50+ доступных, настраиваемых компонентов готовы к использованию.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Живой предпросмотр в sandbox',
+        description:
+          'Видите работающее приложение в реальном времени по мере его генерации Borchani. Выявляйте проблемы рано, управляйте сборкой через чат.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Экспорт в GitHub одним кликом',
+        description:
+          'Запушьте весь репозиторий в GitHub одним кликом. Чистая история коммитов, правильный .gitignore, готов для вашего CI/CD pipeline.',
+        icon: 'tabler:brand-github',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1555066931-4365d14bab5c?auto=format&fit=crop&w=870&q=80',
+      alt: 'Качество кода Borchani',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Код действительно хорош
+      </h3>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Часы, сэкономленные на каждом проекте',
+        description:
+          'Больше не нужно настраивать конфиги Vite, устанавливать Tailwind, конфигурировать пути TypeScript или подключать роутер. Borchani берёт всё это на себя.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Запустите раньше конкурентов',
+        description:
+          'Побеждает тот, кто быстрее валидирует. Borchani сжимает недели фронтенд-разработки в один день.',
+        icon: 'tabler:bolt',
+      },
+      {
+        title: 'Дизайнер не нужен',
+        description:
+          'Borchani генерирует профессиональные интерфейсы с shadcn/ui и Tailwind. Результат выглядит профессионально без единого файла Figma.',
+        icon: 'tabler:palette',
+      },
+      {
+        title: 'Деплой куда угодно',
+        description:
+          'Сгенерированный код - стандартный React + Vite. Деплойте на Vercel, Netlify, Cloudflare, AWS или свой сервер - ваш выбор.',
+        icon: 'tabler:cloud-upload',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=774&q=80',
+      alt: 'Скорость разработки с Borchani',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Почему команды переходят на Borchani
+      </h3>
+    </Fragment>
+  </Content>
+
+  <Testimonials
+    title="Что говорят разработчики"
+    testimonials={[
+      {
+        testimonial:
+          'Я сдал MVP клиенту за два дня, используя Borchani. Сгенерированный код был достаточно чистым, чтобы передать его без единой правки. Такого ни с одним другим инструментом не было.',
+        name: 'Алексей Морозов',
+        job: 'Фрилансер-разработчик',
+        image: {
+          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+          alt: 'Алексей Морозов',
+        },
+      },
+      {
+        testimonial:
+          'Команде ops нужен был кастомный дашборд, а бэклог разработки был забит на три месяца вперёд. Я описал задачу Borchani, итерировал час через чат - и к концу дня было готово production-ready решение.',
+        name: 'Прия Мехта',
+        job: 'Руководитель отдела операций, TechScale',
+        image: {
+          src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80',
+          alt: 'Прия Мехта',
+        },
+      },
+      {
+        testimonial:
+          'Я дизайнер, не разработчик. Borchani позволил мне самому построить то, что я проектировал, не дожидаясь инженеров. Сгенерированный код был достаточно хорош - наш бэкенд-разработчик просто подключил API.',
+        name: 'Карлос Вега',
+        job: 'Product designer, Nomad Labs',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
+          alt: 'Карлос Вега',
+        },
+      },
+    ]}
+    callToAction={{
+      target: '_blank',
+      text: 'Читать больше историй',
+      href: '/ru/case-studies',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Начать создавать бесплатно',
+        href: 'https://app.borchani.com/api/auth/oauth/google',
+        target: '_blank',
+      },
+    ]}
+    title="Что вы хотите создать?"
+    subtitle="Опишите это. Borchani запустит рабочий предпросмотр до вашего следующего совещания."
+  />
+</Layout>

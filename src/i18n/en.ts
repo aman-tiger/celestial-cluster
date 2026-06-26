@@ -293,6 +293,22 @@ const en: Translations = {
   languageSwitcher: {
     label: 'Language',
   },
+  promptHero: {
+    badge: '#1 vibe coding platform for builders',
+    h1Line1: 'What will you ship today?',
+    h1Highlight: 'Borchani builds it for you.',
+    subtitle: 'Describe your app in plain English. Borchani generates the full stack - React, TypeScript, database, auth, deploy. No coding required.',
+    benefit1: 'Full-stack: frontend + backend + DB',
+    benefit2: 'Live preview, instant deploy',
+    benefit3: 'Free to start, no credit card',
+    placeholder: 'Describe the app you want to build…\n\nExample: Build a SaaS task manager with user auth, a Kanban board, and a team dashboard.',
+    buildBtn: 'Build',
+    chip1: 'Build a SaaS with user auth',
+    chip2: 'Launch an e-commerce store',
+    chip3: 'Create an internal dashboard',
+    chip4: 'Ship a mobile-first booking app',
+    socialProof: 'Trusted by <strong class="text-default dark:text-slate-300 font-semibold">12,000+</strong> builders and founders &nbsp;·&nbsp; <strong class="text-default dark:text-slate-300 font-semibold">50,000+</strong> apps shipped on Borchani',
+  },
 };
 
 export default en;

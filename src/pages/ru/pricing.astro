@@ -1,0 +1,201 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Цены - Borchani AI App Builder',
+  description:
+    'Простые тарифы для каждого этапа. Начните бесплатно, переходите на платный план когда нужно больше. Без контрактов и скрытых комиссий.',
+  openGraph: {
+    type: 'website',
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Цены"
+    title="Платите за то, чем пользуетесь. Ничего лишнего."
+    subtitle="Мы намеренно сделали тарифы простыми. Выберите план, который подходит вам прямо сейчас - позже всегда можно поменять."
+  />
+
+  <Prices
+    title="Выберите план"
+    subtitle="Все планы включают основные возможности Borchani. Платные планы просто снимают ограничения."
+    prices={[
+      {
+        title: 'Starter',
+        subtitle: 'Для одиночных разработчиков и побочных проектов',
+        price: 19,
+        period: '/ месяц',
+        items: [
+          { description: '150 AI-кредитов в месяц' },
+          { description: 'Живой предпросмотр в sandbox' },
+          { description: 'Скачать код как ZIP' },
+          { description: 'React 19 + TypeScript + Tailwind' },
+          { description: 'Поддержка сообщества' },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Получить Starter',
+          href: 'https://app.borchani.com/api/auth/oauth/google',
+        },
+      },
+      {
+        title: 'Pro',
+        subtitle: 'Для разработчиков, которые запускают каждую неделю',
+        price: 49,
+        period: '/ месяц',
+        items: [
+          { description: '500 AI-кредитов в месяц' },
+          { description: 'Экспорт в GitHub одним кликом' },
+          { description: 'Деплой на свой домен' },
+          { description: 'Приоритетная очередь сборки' },
+          { description: 'Доступ к TypeScript SDK' },
+          { description: 'Email-поддержка (< 24 ч)' },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Получить Pro',
+          href: 'https://app.borchani.com/api/auth/oauth/google',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'Самый популярный',
+      },
+      {
+        title: 'Business',
+        subtitle: 'Для команд, создающих продукты вместе',
+        price: 149,
+        period: '/ месяц',
+        items: [
+          { description: '2 000 AI-кредитов в месяц' },
+          { description: 'До 10 мест включено' },
+          { description: 'Общие рабочие пространства и история сборок' },
+          { description: 'REST API + вебхуки' },
+          { description: 'SSO и управление администратором' },
+          { description: 'Приоритетный чат и email-поддержка' },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Получить Business',
+          href: 'https://app.borchani.com/api/auth/oauth/google',
+        },
+      },
+    ]}
+  />
+
+  <Features3
+    title="Что входит в каждый план"
+    subtitle="Несколько вещей, которые верны независимо от выбранного тарифа"
+    columns={2}
+    items={[
+      {
+        title: 'Прозрачные цены',
+        description:
+          'Цена, которую вы видите - это цена, которую вы платите. Никаких неожиданных платежей в конце месяца, никогда.',
+        icon: 'tabler:flip-vertical',
+      },
+      {
+        title: 'Код принадлежит вам',
+        description:
+          'Каждая строка кода, сгенерированная Borchani, принадлежит вам. Экспортируйте, изменяйте, деплойте где угодно.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Безопасные платежи',
+        description:
+          'Платежи обрабатываются через Stripe. Мы никогда не храним данные карт на наших серверах.',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'Мгновенный доступ',
+        description:
+          'После подписки вы сразу получаете доступ - без периода ожидания, без ручной активации.',
+        icon: 'tabler:bolt',
+      },
+      {
+        title: 'Смена плана в любое время',
+        description:
+          'Планы оплачиваются ежемесячно. Переходите на более высокий или низкий тариф когда угодно, без штрафов.',
+        icon: 'tabler:arrows-exchange',
+      },
+      {
+        title: 'Поддержка на каждом плане',
+        description:
+          'Поддержка сообщества на бесплатном, email на Pro, приоритетный чат + email на Business.',
+        icon: 'tabler:headset',
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  />
+
+  <Steps
+    title="Начните за несколько минут"
+    tagline="Как это работает"
+    isReversed={true}
+    items={[
+      { title: 'Выберите план', icon: 'tabler:number-1' },
+      { title: 'Создайте аккаунт', icon: 'tabler:number-2' },
+      { title: 'Введите данные оплаты', icon: 'tabler:number-3' },
+      { title: 'Подтвердите подписку', icon: 'tabler:number-4' },
+      { title: 'Откройте конструктор', icon: 'tabler:number-5' },
+      { title: 'Опишите приложение и нажмите "Создать"', icon: 'tabler:number-6' },
+      { title: 'Запустите!', icon: 'tabler:number-7' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=987&q=80',
+      alt: 'Начало работы с Borchani',
+    }}
+  />
+
+  <FAQs
+    title="Вопросы о ценах"
+    subtitle="Если что-то осталось непонятным, напишите нам - ответим в тот же день."
+    columns={1}
+    items={[
+      {
+        title: 'Истекает ли бесплатный план?',
+        description:
+          'Нет. Бесплатный план бесплатен навсегда. Вы получаете 10 сборок в месяц и полный доступ к конструктору - кредитная карта для начала не нужна.',
+      },
+      {
+        title: 'Что считается "сборкой"?',
+        description:
+          'Сборка - это одна полная сессия генерации: от вашего промпта до работающего приложения. Доработка существующей сборки (добавление функций, исправления через чат) не считается новой сборкой.',
+      },
+      {
+        title: 'Можно ли отменить подписку в любое время?',
+        description:
+          'Да. Отмените в настройках аккаунта в любое время. Доступ сохраняется до конца оплаченного периода, и повторных списаний не будет.',
+      },
+      {
+        title: 'Есть ли годовая оплата?',
+        description:
+          'Да - при годовом плане два месяца бесплатно. Переключитесь на годовую оплату в настройках аккаунта в любое время.',
+      },
+      {
+        title: 'Есть ли скрытые комиссии?',
+        description:
+          'Никаких. Ежемесячная цена покрывает всё, указанное в плане. Единственные дополнительные расходы возможны, если вы используете собственный API-ключ LLM.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Готовы что-то создать?"
+    subtitle="Начните на бесплатном плане сегодня - карта не нужна. Переходите на платный, когда это будет иметь смысл."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Начать бесплатно',
+        href: 'https://app.borchani.com/api/auth/oauth/google',
+        target: '_blank',
+      },
+    ]}
+  />
+</Layout>

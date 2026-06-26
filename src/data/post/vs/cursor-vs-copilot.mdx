@@ -48,16 +48,16 @@ Cursor also ships with its own model routing layer. You can use Claude, GPT-4o, 
 - Chat with full codebase indexing: ask about any file, function, or pattern
 - `.cursorrules` for persistent project-level AI instructions
 - Supports Claude, GPT-4o, Gemini, and custom model endpoints
-- Privacy Mode: your code never stored on Cursor servers (opt-in)
+- Privacy Mode: your code is never stored on Cursor servers (opt-in)
 - Built-in terminal, git diff, and code review integrations
 
 ## What Is GitHub Copilot?
 
 GitHub Copilot is Microsoft's AI coding assistant, built on OpenAI's models and deeply integrated into the GitHub ecosystem. It launched in 2021 and remains the most widely adopted AI coding tool in the industry, with tens of millions of developers using it across VS Code, JetBrains IDEs, Neovim, and the GitHub web interface.
 
-Copilot's core value proposition is frictionless inline suggestions. As you type, Copilot completes lines, functions, and entire blocks based on your code context, comments, and docstrings. It does not require you to switch tools or modes  -  the suggestions appear inline, ghost-text style, and you accept them with Tab. For most developers, this creates zero workflow disruption.
+Copilot's core value proposition is frictionless inline suggestions. As you type, Copilot completes lines, functions, and entire blocks based on your code context, comments, and docstrings. It doesn't require you to switch tools or modes. Suggestions appear inline, ghost-text style, and you accept them with Tab. For most developers, this creates zero workflow disruption.
 
-In 2024 and 2025, GitHub significantly expanded Copilot beyond autocomplete. Copilot Chat (available in VS Code and JetBrains) gives you a conversational interface for explaining code, generating tests, and fixing bugs. Copilot Workspace is a more ambitious feature  -  a browser-based environment where you describe a task in natural language and Copilot plans and implements the changes across your repository. GitHub also added Copilot for pull requests, which generates PR descriptions and code review suggestions automatically.
+In 2024 and 2025, GitHub significantly expanded Copilot beyond autocomplete. Copilot Chat (available in VS Code and JetBrains) gives you a conversational interface for explaining code, generating tests, and fixing bugs. Copilot Workspace is a more ambitious feature: a browser-based environment where you describe a task in natural language and Copilot plans and implements the changes across your repository. GitHub also added Copilot for pull requests, which generates PR descriptions and code review suggestions automatically.
 
 **Key GitHub Copilot features:**
 - Inline ghost-text suggestions in VS Code, JetBrains, Neovim, and more
@@ -87,13 +87,13 @@ GitHub Copilot pricing:
 - **Business ($19/user/month)**: Team management, policy controls, audit logs
 - **Enterprise ($39/user/month)**: Custom fine-tuning, Copilot Workspace, advanced security features
 
-On price alone, Copilot Pro is cheaper at $10/month vs Cursor Pro at $20/month. But Cursor Pro includes more capable model access out of the box. The Business tiers are close  -  Cursor at $40 vs Copilot Business at $19  -  but Copilot Enterprise at $39 matches Cursor Business in terms of positioning.
+On price alone, Copilot Pro is cheaper at $10/month vs Cursor Pro at $20/month. But Cursor Pro includes more capable model access out of the box. The Business tiers are close: Cursor at $40 vs Copilot Business at $19. Copilot Enterprise at $39 matches Cursor Business in terms of positioning.
 
 ### Ease of Use
 
 If you already use VS Code, GitHub Copilot has nearly zero onboarding cost. Install the extension, authenticate with your GitHub account, and you have AI suggestions in minutes. Your existing keyboard shortcuts, settings, and extensions all stay in place.
 
-Cursor requires downloading a separate application. The initial setup is still fast  -  under 10 minutes  -  and you can import your VS Code settings, extensions, and keybindings. But you are adopting a new tool, not extending an existing one. For developers deeply embedded in VS Code workflows (custom keybindings, workspace configurations, team-shared settings), there can be friction.
+Cursor requires downloading a separate application. The initial setup is still fast, under 10 minutes, and you can import your VS Code settings, extensions, and keybindings. But you're adopting a new tool, not extending an existing one. For developers deeply embedded in VS Code workflows (custom keybindings, workspace configurations, team-shared settings), there can be friction.
 
 Where Cursor's learning curve pays off is in the more powerful features. Composer and Agent mode have a steeper curve than Copilot's inline suggestions, but once you internalize them, the productivity multiplier is larger. Copilot's inline suggestions are immediately intuitive but have a lower ceiling.
 
@@ -103,17 +103,17 @@ This is where the two tools diverge most sharply.
 
 Copilot's inline autocomplete is more polished for moment-to-moment typing. The ghost-text suggestions are smooth, context-aware, and rarely jarring. For writing code you already know how to write but want to type faster, Copilot is excellent.
 
-Cursor's Composer and Agent modes go further. When you need to implement a feature that touches ten files  -  say, adding a new entity with API routes, service layer, database migrations, and tests  -  Cursor's Agent can plan and execute that across your entire project in one session. Copilot's equivalent (Copilot Workspace) is browser-based and more limited in scope for complex multi-file operations.
+Cursor's Composer and Agent modes go further. When you need to implement a feature that touches ten files — say, adding a new entity with API routes, service layer, database migrations, and tests — Cursor's Agent can plan and execute that across your entire project in one session. Copilot's equivalent (Copilot Workspace) is browser-based and more limited in scope for complex multi-file operations.
 
 Cursor also wins on model flexibility. You can switch between Claude Sonnet, GPT-4o, Gemini, and specialized coding models depending on the task. Copilot has expanded model access in its higher tiers, but the default experience is more locked to OpenAI models.
 
-Both tools have a chat interface. Cursor's chat has better codebase indexing for large projects  -  it can reference specific files, functions, and git history in a way that Copilot Chat sometimes struggles with in very large repos.
+Both tools have a chat interface. Cursor's chat has better codebase indexing for large projects. It can reference specific files, functions, and git history in a way that Copilot Chat sometimes struggles with in very large repos.
 
 ### Output Quality
 
 For pure autocomplete quality, both tools are strong. The difference is context window size and codebase awareness. Cursor's Tab autocomplete pulls from a larger codebase context and tends to make more accurate predictions for project-specific patterns (custom utilities, naming conventions, project architecture).
 
-Copilot's suggestions are often excellent for standard library usage, common patterns, and boilerplate  -  which covers a large percentage of everyday coding. For idiosyncratic project code, Cursor has an edge.
+Copilot's suggestions are often excellent for standard library usage, common patterns, and boilerplate. That covers a large percentage of everyday coding. For idiosyncratic project code, Cursor has an edge.
 
 In agentic tasks (multi-file edits, feature implementation, refactoring), Cursor's Agent mode produces noticeably more coherent output. Copilot Workspace is still in limited access and less battle-tested for complex tasks.
 
@@ -127,9 +127,9 @@ Copilot wins on ecosystem breadth. It integrates directly into:
 - GitHub Actions (Copilot-generated CI suggestions)
 - GitHub Codespaces (cloud dev environment)
 
-Cursor is VS Code-compatible (extensions work), but it is a standalone app. It does not integrate into GitHub.com, JetBrains, or terminal-based editors. If your team uses a mix of editors or your workflow is heavily tied to GitHub's web interface, Copilot has a clear advantage.
+Cursor is VS Code-compatible (extensions work), but it's a standalone app. It doesn't integrate into GitHub.com, JetBrains, or terminal-based editors. If your team uses a mix of editors or your workflow is heavily tied to GitHub's web interface, Copilot has a clear advantage.
 
-For solo developers or small teams who are willing to standardize on a single editor, Cursor's deeper feature set outweighs the ecosystem gap.
+For solo developers or small teams willing to standardize on a single editor, Cursor's deeper feature set outweighs the ecosystem gap.
 
 ## Side-by-Side Comparison
 
@@ -154,17 +154,17 @@ For solo developers or small teams who are willing to standardize on a single ed
 
 Cursor is the right choice when:
 
-- **You want agentic workflows.** If you regularly implement features that span multiple files, services, or layers of your stack, Cursor's Agent mode handles this in ways Copilot cannot yet match. Tasks like "migrate this API to use a new schema" or "add authentication to every protected route" run better in Cursor.
-- **You want model flexibility.** If you want to route different tasks to different models  -  Claude for complex reasoning, GPT-4o for speed, Gemini for long context  -  Cursor's multi-model support gives you that control without leaving the editor.
+- **You want agentic workflows.** If you regularly implement features that span multiple files, services, or layers of your stack, Cursor's Agent mode handles this in ways Copilot can't yet match. Tasks like "migrate this API to use a new schema" or "add authentication to every protected route" run better in Cursor.
+- **You want model flexibility.** If you want to route different tasks to different models — Claude for complex reasoning, GPT-4o for speed, Gemini for long context — Cursor's multi-model support gives you that control without leaving the editor.
 - **You work on large, complex codebases.** Cursor's codebase indexing and context management scales better for repos with hundreds of files and non-obvious interdependencies. The `.cursorrules` file lets you encode project-specific conventions that improve output quality over time.
-- **You are a solo developer or small team willing to standardize.** The productivity gains from Cursor's deeper features are highest when everyone on the team can use them. If you can align your team on Cursor, the ceiling is higher than Copilot.
+- **You're a solo developer or small team willing to standardize.** The productivity gains from Cursor's deeper features are highest when everyone on the team can use them. If you can align your team on Cursor, the ceiling is higher than Copilot.
 - **You want to explore bleeding-edge AI coding patterns.** Cursor ships new features aggressively. If you want to experiment with AI-driven development workflows before they become mainstream, Cursor is where that happens first.
 
 ## When to Choose GitHub Copilot
 
 GitHub Copilot makes more sense when:
 
-- **You are embedded in the GitHub ecosystem.** If your team manages code reviews, CI/CD, and project planning inside GitHub, Copilot's integrations (PR descriptions, Copilot Chat in GitHub.com, Codespaces) add value that Cursor cannot replicate.
+- **You're embedded in the GitHub ecosystem.** If your team manages code reviews, CI/CD, and project planning inside GitHub, Copilot's integrations (PR descriptions, Copilot Chat in GitHub.com, Codespaces) add value that Cursor can't replicate.
 - **Your team uses multiple editors.** JetBrains users (Java, Kotlin, Python), VS Code users, and Neovim users can all use Copilot consistently. Standardizing on Cursor means standardizing on a single editor, which is not always feasible for larger teams.
 - **You want low friction onboarding.** For a developer who has never used an AI coding tool, Copilot's inline suggestions are the gentlest on-ramp. There is no new UI to learn  -  suggestions appear in the editor you already use.
 - **Cost is a primary concern.** At $10/month for Pro vs $20/month for Cursor Pro, Copilot is the more affordable entry point  -  especially for teams where not everyone will use the advanced features.

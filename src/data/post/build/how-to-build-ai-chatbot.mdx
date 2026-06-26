@@ -1,0 +1,264 @@
+---
+publishDate: 2026-06-26T00:00:00Z
+updateDate: 2026-06-26T00:00:00Z
+title: "How to Build an AI Chatbot in 2025 (No Code Required)"
+excerpt: "Build an AI chatbot without writing a line of code. This guide shows you exactly how to go from idea to live chatbot in under an hour using Borchani."
+image: https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&w=1200&q=80
+category: Guides
+tags:
+  - build chatbot ai
+  - ai chatbot builder
+  - borchani
+author: "Zhassulan Baigozha"
+metadata:
+  canonical: https://borchani.com/how-to-build-ai-chatbot
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    type: article
+    images:
+      - url: https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&w=1200&q=80
+        width: 1200
+        height: 630
+---
+
+You can build an AI chatbot in 2025 without writing a single line of code. With Borchani, you describe what the chatbot should do, and it generates a working, deployable chat interface in minutes.
+
+This guide walks you through the whole process: picking the right chatbot type for your use case, writing prompts that produce good results, and going from a blank canvas to a live URL.
+
+> **TL;DR**
+> - You can build a fully functional AI chatbot without code using Borchani
+> - Choose your chatbot type first (customer support, lead gen, or internal) - each has different requirements
+> - The process from first prompt to live chatbot takes under an hour
+
+## What makes an AI chatbot actually good
+
+Before you build, it helps to know what separates a useful chatbot from a frustrating one. Most chatbots fail not because of the technology - they fail because they have no clear purpose.
+
+A good AI chatbot does three things well:
+
+**It has a defined scope.** The chatbot knows what it handles and what it doesn't. A customer support bot for a SaaS product should know your pricing, your features, and your refund policy. It should not try to answer questions about quantum physics. Narrow scope means better answers.
+
+**It hands off gracefully.** When a question falls outside what the bot can answer, it shouldn't guess. It should say so and offer a path forward: a link to your docs, an email address, a calendar link to book a call. Graceful fallback is what keeps users from feeling abandoned.
+
+**It fits the conversation context.** A chatbot on a pricing page should lead with ROI and comparisons. A chatbot inside your app should know who the user is and what they're trying to do. Matching the context makes the bot feel helpful rather than generic.
+
+Keep these three things in mind as you design yours.
+
+## Three types of AI chatbots (and which one you need)
+
+### Customer support chatbot
+
+This is the most common type. You put it on your website or in your product to handle questions that would otherwise go to your support inbox.
+
+Good for: answering FAQs, explaining features, handling simple troubleshooting, collecting bug reports, directing users to documentation.
+
+Not good for: complex account issues that require database access, billing disputes, or situations where the user is angry and needs a human.
+
+A customer support chatbot should have a knowledge base behind it: your docs, your FAQ page, your pricing page. The more structured your source material, the better the bot performs.
+
+### Lead generation chatbot
+
+This type sits on a landing page or marketing site. Its job is to qualify visitors and capture contact information - not to answer every possible question, but to move people toward a sales conversation.
+
+Good for: asking qualifying questions, booking demos, capturing emails, routing leads to the right salesperson.
+
+Not good for: replacing a full sales conversation or handling objections from a buyer who already knows what they want.
+
+The most effective lead gen chatbots feel like a conversation, not a form. Instead of showing a five-field signup form, they ask one question at a time and collect the same information over a few exchanges.
+
+### Internal knowledge chatbot
+
+This type lives inside your organization. Employees ask it questions and it answers based on your internal documentation, SOPs, HR policies, or whatever knowledge base you feed it.
+
+Good for: answering policy questions, helping new hires onboard, surfacing internal documentation without requiring someone to search through Notion or Confluence.
+
+Not good for: tasks that require action in other systems (creating tickets, updating records) unless you build those integrations explicitly.
+
+Internal chatbots often have higher ROI than customer-facing ones because the cost of a bad answer is lower. An employee who gets a wrong answer can verify it. A customer who gets a wrong answer may churn.
+
+## Chatbot builder comparison
+
+Before committing to a tool, it's worth knowing what's out there. Here's how the main options compare:
+
+| Tool | No-code | Exports real code | Custom UI | Pricing |
+|------|---------|-------------------|-----------|---------|
+| Borchani | Yes | Yes (React/TS) | Full control | Free plan + paid |
+| Intercom Fin | Yes | No | Limited | $$$$ |
+| Tidio | Yes | No | Limited | $ - $$ |
+| Botpress | Partial | Yes | Moderate | Free + paid |
+| Voiceflow | Yes | No | Moderate | $$ - $$$ |
+| Dante AI | Yes | No | Limited | $ - $$ |
+
+Borchani is the only option in this list that generates exportable, production-quality React code. That matters if you care about owning your chatbot long-term rather than renting it from a platform. If you ever outgrow the no-code layer, you have real code to work with - not a locked-in proprietary schema.
+
+For teams that want a chatbot that looks exactly like the rest of their product, Borchani is the right call. For teams that need something live in 20 minutes and don't care about customization, Tidio or Dante AI are faster.
+
+## How to build an AI chatbot with Borchani
+
+Here is the exact process, step by step. This assumes you have a [Borchani account](https://app.borchani.com/api/auth/oauth/google) - the free plan is enough to follow along.
+
+### Step 1: Define the chatbot before you build it
+
+Open a notes file and answer these questions before touching Borchani:
+
+1. **What type is it?** Customer support, lead gen, or internal?
+2. **Where does it live?** Your website, your app, or an internal tool?
+3. **What should it know?** List the topics it must handle.
+4. **What should it refuse?** List things that are out of scope.
+5. **What does success look like?** A booked demo, a resolved ticket, a found document?
+
+Spending ten minutes here saves you an hour of revisions. The more clarity you bring to the build, the less prompting you need to do later.
+
+### Step 2: Write your initial Borchani prompt
+
+Open Borchani and describe the chatbot you want. Be specific. Here is an example of a weak prompt and a strong one:
+
+**Weak:** "Build me a customer support chatbot"
+
+**Strong:** "Build a customer support chatbot for a SaaS product called Borchani. The chat widget appears in the bottom right corner of the screen. It should greet users with 'Hi, how can I help you today?' and handle questions about pricing, features, and account setup. If it can't answer something, it should say 'I'm not sure about that - you can email support@borchani.com for help.' Use a clean, minimal design with a white chat bubble and blue user messages. Show a typing indicator when the bot is thinking."
+
+The strong prompt gives Borchani: the product name, the widget placement, a sample greeting, the topics to handle, a fallback response, visual design direction, and a UX detail (typing indicator). That level of detail produces a usable first draft.
+
+### Step 3: Review the live preview
+
+Borchani renders a live preview as it builds. Within about 90 seconds, you should see a working chat widget. Test it immediately:
+
+- Does the greeting look right?
+- Does the layout match where you want it on the page?
+- Does the visual style fit your brand?
+
+Do not wait for the perfect build before giving feedback. If the widget is in the wrong corner, say so now. Early corrections take seconds. Late corrections sometimes require rebuilding components.
+
+### Step 4: Add your knowledge base content
+
+A chatbot is only as good as what it knows. Once the UI is in place, add your actual content. In Borchani chat, you can paste in your key information and ask the bot to be trained on it:
+
+"Update the chatbot so it knows the following information and uses it to answer questions:
+
+**Pricing:** Free plan includes 3 projects and 50 AI credits per month. Starter plan is $19/month with 150 credits. Pro is $49/month with 500 credits. All paid plans include GitHub export and priority support.
+
+**Features:** Borchani generates React + TypeScript + Tailwind CSS code. Users describe their app in plain language. The tool generates a live preview in real time. Code can be exported to GitHub or downloaded as a ZIP.
+
+**Common issues:** If someone can't log in, they should try resetting their password at borchani.com/reset. If the build gets stuck, refreshing the page and re-sending the last message usually fixes it."
+
+The more structured and factual your input, the more accurate the chatbot's responses will be. Use bullet points and clear labels - the AI processes structured text better than flowing prose.
+
+### Step 5: Test edge cases
+
+Once the knowledge base is in, test questions your real users will actually ask - including the awkward ones:
+
+- "Can I cancel anytime?" (billing question)
+- "Is there a mobile app?" (feature you might not have)
+- "How does this compare to Lovable?" (competitor question)
+- "I want a refund" (sensitive support situation)
+- "adkjashd" (nonsense input)
+
+For each response that isn't right, give corrective feedback in the Borchani chat. "When someone asks about cancellation, the bot should say: 'Yes, you can cancel anytime from your account settings. No cancellation fees.' " One message, one fix.
+
+### Step 6: Style it to match your brand
+
+The default chatbot UI looks clean, but you probably want it to match your site. Common style adjustments:
+
+- "Change the primary color from blue to #7C3AED (purple)"
+- "Use the font Inter instead of the default"
+- "Make the chat bubble shadow softer"
+- "Add our logo to the chatbot header"
+- "Change the send button icon to an arrow pointing right"
+
+You can also ask Borchani to match the chatbot to your existing site's color scheme if you describe it. For example: "Our site uses a dark background (#0F0F0F), white text, and green (#22C55E) as the accent color. Match the chatbot to that palette."
+
+### Step 7: Export and embed
+
+When the chatbot looks and behaves the way you want, export the code to GitHub. Borchani creates a clean React component you can drop into any existing web project.
+
+Embedding it in your site is straightforward:
+
+```tsx
+import { ChatWidget } from './components/ChatWidget';
+
+export default function App() {
+  return (
+    <div>
+      {/* your existing site */}
+      <ChatWidget />
+    </div>
+  );
+}
+```
+
+If you're adding it to a non-React site (plain HTML, WordPress, Webflow), Borchani can also generate a self-contained script tag version that you paste into your site's `<head>`. Ask for it explicitly: "Generate a version of this chatbot that can be embedded with a single `<script>` tag in a non-React website."
+
+### Step 8: Deploy
+
+If you're building the chatbot as a standalone page (useful for testing or internal tools), deploy it directly from GitHub using Vercel:
+
+1. Connect your GitHub repo to Vercel at vercel.com/new
+2. Select the repo Borchani created
+3. Vercel detects it as a Vite project automatically
+4. Click Deploy
+
+You have a live URL in under two minutes. Share it with your team for testing before you put it in front of customers.
+
+If you're embedding in an existing site, just paste the component into your codebase and deploy normally.
+
+## Common mistakes (and how to avoid them)
+
+**Making it answer everything.** A chatbot that tries to handle any question will give bad answers to most of them. Define the scope before you build and stay inside it.
+
+**Skipping the fallback.** Every chatbot needs a graceful "I don't know" path. Users respect honesty more than a confident wrong answer.
+
+**Launching without testing edge cases.** Test your own chatbot before users do. The five minutes it takes to try a dozen weird questions is worth it.
+
+**Ignoring mobile.** Check how the chat widget looks on a phone. Many visitors will be on mobile. A widget that covers the whole screen or has tap targets that are too small will get closed immediately.
+
+**Not updating the knowledge base.** If your pricing changes, update the chatbot. If you launch a new feature, add it. A chatbot with stale information is worse than no chatbot.
+
+## What you can build on top of the basic chatbot
+
+Once you have a working chatbot, there are common extensions worth considering depending on your use case.
+
+For [internal tools and admin apps](/build-web-app-without-coding-2025), you can integrate the chatbot with your data layer so it can pull real-time information - like checking an order status or looking up a customer record - rather than just answering from a static knowledge base.
+
+For marketing sites, connecting the chatbot to a CRM (HubSpot, Pipedrive) so captured leads flow directly into your pipeline is worth the extra hour of setup. Borchani can generate the frontend form components; the API integration is a separate configuration step.
+
+For products with logged-in users, you can pass user context into the chatbot so it can personalize responses. Knowing that a user is on the Pro plan means the bot doesn't need to explain Free plan limitations to them. Borchani can build the component to accept user props from your app's auth context.
+
+## FAQ
+
+### How long does it take to build an AI chatbot with Borchani?
+
+The first draft is ready in about 5 minutes. Getting it to a state you'd put in front of customers - with your knowledge base, your branding, and tested edge cases - takes 30 to 60 minutes depending on complexity. Subsequent chatbots go faster once you know what a good initial prompt looks like.
+
+### Do I need a backend or database?
+
+For a knowledge-base chatbot, no. The responses come from the context you provide during the build. If you want the chatbot to look up live data (order status, account info), you need an API endpoint on your backend that the chatbot calls. Borchani builds the frontend that calls that endpoint; the endpoint itself is a separate development task.
+
+### Can I use my own AI model or API key?
+
+Yes. Borchani lets you connect your own OpenAI API key if you want control over which model handles responses. This is useful if you want GPT-4o for better accuracy, or if you want to use a fine-tuned model you've trained on your own data.
+
+### What happens if the chatbot gives a wrong answer?
+
+Add a correction in the Borchani chat and the bot updates immediately. For production chatbots, it's worth reviewing chat logs weekly and fixing patterns of wrong answers - it takes 10 minutes and the improvement compounds over time.
+
+### Can the chatbot handle multiple languages?
+
+Yes, the underlying models handle multiple languages well. If your users write in Spanish, French, or other languages, the bot responds in kind by default. If you want to restrict it to a specific language, you can add that to the system prompt during the build.
+
+### Is the generated code production-ready?
+
+The React code Borchani generates follows standard conventions - typed with TypeScript, styled with Tailwind CSS, with clean component structure. It's the kind of code a developer can pick up and maintain. It's not perfect for every use case, but it's a real starting point, not throwaway scaffolding.
+
+## Related Articles
+
+- [How to Build a Website with AI](/how-to-build-a-website-with-ai)
+- [Best Low-Code App Builders in 2025](/best-low-code-app-builders)
+- [AI UI Generator: Build Interfaces Without Design Skills](/ai-ui-generator)
+- [How to Build a Web App Without Writing Code in 2025](/build-web-app-without-coding-2025)
+- [From Idea to Deployed App: A Complete Borchani Walkthrough](/from-idea-to-deployed-app-borchani-walkthrough)
+
+---
+
+The chatbot you build with Borchani is yours. The code exports cleanly, deploys anywhere, and you're not locked into a monthly seat fee per conversation. If you're ready to stop adding chatbot tickets to your backlog and just build one, start here: [Build your AI chatbot with Borchani](https://app.borchani.com/api/auth/oauth/google)

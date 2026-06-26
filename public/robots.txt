@@ -1,5 +1,5 @@
 # robots.txt for borchani.com
-# Last updated: 2026-04-09
+# Last updated: 2026-06-26
 
 # ============================================================
 # Default: Allow all crawlers
@@ -9,35 +9,47 @@ Disallow: /decapcms/
 Disallow: /admin/
 
 # ============================================================
-# AI Crawlers — explicitly allowed for GEO
-# (Generative Engine Optimization)
+# AI Search Engines — real-time citation and GEO
+# Explicitly allowed so Borchani appears in AI answers
 # ============================================================
 
-# OpenAI / ChatGPT
+# OpenAI ChatGPT Search (real-time web search)
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI ChatGPT browser plugin
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI training (helps ChatGPT remember Borchani)
 User-agent: GPTBot
 Allow: /
 
-# Anthropic / Claude
-User-agent: Claude-Web
-Allow: /
-User-agent: anthropic-ai
-Allow: /
-User-agent: ClaudeBot
-Allow: /
-
-# Google AI (Gemini, Search Generative Experience)
-User-agent: Google-Extended
-Allow: /
-
-# Perplexity
+# Perplexity (real-time AI search)
 User-agent: PerplexityBot
 Allow: /
 
-# Common Crawl (training data)
+# Anthropic Claude (training + web search citation)
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Google AI (Gemini, AI Overviews, training)
+User-agent: Google-Extended
+Allow: /
+
+# Apple AI
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl (powers many AI training datasets)
 User-agent: CCBot
 Allow: /
 
-# Cohere
+# Cohere (AI training and search)
 User-agent: cohere-ai
 Allow: /
 
@@ -45,8 +57,12 @@ Allow: /
 User-agent: FacebookBot
 Allow: /
 
-# Apple
-User-agent: Applebot-Extended
+# Bytedance / TikTok AI
+User-agent: Bytespider
+Allow: /
+
+# Amazon AI
+User-agent: Amazonbot
 Allow: /
 
 # ============================================================

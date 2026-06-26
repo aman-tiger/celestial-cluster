@@ -45,5 +45,21 @@ const language = Astro.currentLocale ?? I18N.language;
     <slot />
 
     <BasicScripts />
+
+    <script is:inline>
+      // Auto-detect browser language on first visit, redirect to /ru/ if Russian
+      (function () {
+        const key = 'aw-locale-redirected';
+        if (sessionStorage.getItem(key)) return;
+        sessionStorage.setItem(key, '1');
+        const path = window.location.pathname;
+        const alreadyLocalized = /^\/(ru|es|ja|ko)(\/|$)/.test(path);
+        if (alreadyLocalized) return;
+        const lang = (navigator.language || navigator.languages?.[0] || '').toLowerCase();
+        if (lang.startsWith('ru')) {
+          window.location.replace('/ru' + (path === '/' ? '' : path));
+        }
+      })();
+    </script>
   </body>
 </html>

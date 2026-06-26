@@ -1,6 +1,6 @@
 ---
 publishDate: 2025-04-10T00:00:00Z
-title: Prompt Engineering for AI App Builders — What Actually Works
+title: Prompt Engineering for AI App Builders  -  What Actually Works
 excerpt: Writing good prompts for AI app generators is a skill, not magic. After building hundreds of apps with AI tools, here's what consistently produces better results and what consistently wastes time.
 image: https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80
 category: Guides
@@ -15,7 +15,7 @@ metadata:
 
 Everyone who uses AI app builders long enough runs into the same thing: some prompts produce exactly what you had in mind, and others produce something that's technically an app but shares almost no resemblance to what you wanted. The gap isn't random. There are patterns that consistently produce better output, and patterns that consistently waste credits and time.
 
-This guide covers what's been learned from building a lot of apps with AI tools. Not theoretical advice about AI — practical patterns that produce better results when you're trying to build something specific.
+This guide covers what's been learned from building a lot of apps with AI tools. Not theoretical advice about AI. Practical patterns that produce better results when you're trying to build something specific.
 
 ## The fundamental problem: the AI has no context about your mental model
 
@@ -45,7 +45,7 @@ Spelling this out explicitly prevents the AI from making assumptions that don't 
 
 ## Pattern 3: Describe what happens, not just what exists
 
-Apps aren't static — they respond to user actions. Describe the interactions explicitly.
+Apps aren't static. They respond to user actions. Describe the interactions explicitly.
 
 **Instead of:** "There should be a button to add tasks"
 
@@ -73,13 +73,13 @@ Don't use this as a shortcut to avoid describing your own requirements, but it c
 
 ## Pattern 6: One major thing per message, for iterations
 
-Initial prompts can and should be long. Iteration messages should be focused. When you send "fix the modal, change the color scheme, add search, and fix the mobile layout" in one message, you're asking the AI to juggle four different contexts simultaneously. The result is often that two things get fixed and two get partially done.
+Initial prompts can and should be long. Iteration messages should be focused. When you send "fix the modal, change the color scheme, add search, and fix the mobile layout" in one message, you're asking the AI to juggle four different contexts at once. The result is often that two things get fixed and two get partially done.
 
 Send one thing per iteration message. It's faster overall because you're not undoing partial fixes.
 
 ## Pattern 7: State what's working before asking for changes
 
-When asking for an iteration, explicitly anchor what should stay the same: "The sidebar and navigation are good — don't touch those. Just fix the task modal: when I click Edit on a task, the modal should pre-fill with the current task values."
+When asking for an iteration, explicitly anchor what should stay the same: "The sidebar and navigation are good, don't touch those. Just fix the task modal: when I click Edit on a task, the modal should pre-fill with the current task values."
 
 This reduces the chance of the AI "helpfully" touching things you didn't ask about.
 
@@ -91,7 +91,7 @@ This reduces the chance of the AI "helpfully" touching things you didn't ask abo
 
 **Asking for everything in version one.** The first generation should get the structure and main interactions right. Don't try to spec every edge case, empty state, and error message upfront. Get the core working first, then layer on polish.
 
-**Not using the live preview.** The preview is updating in real time. Looking at it during the generation lets you catch problems early and send a correction before the build finishes, rather than waiting and asking for a fix after.
+**Not using the live preview.** The preview updates in real time. Watching it during generation lets you catch problems early and send a correction before the build finishes, rather than waiting and asking for a fix after.
 
 ## When to start over vs. iterate
 

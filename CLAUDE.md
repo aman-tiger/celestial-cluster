@@ -1,5 +1,12 @@
 # Borchani — celestial-cluster (Astro Site)
 
+## ПРАВИЛА РАБОТЫ (обязательно соблюдать)
+
+1. **Всегда пушить в main** — все изменения коммитить и пушить напрямую в ветку `main`. Никаких feature-веток и PR без явного запроса.
+2. **Google верификация** — файл `public/google2dea78ba735b0a6b.html` НЕ удалять, он нужен для Google Search Console.
+
+---
+
 ## Stack
 - **Framework**: Astro 5 (static output)
 - **Styling**: Tailwind CSS (no base styles)
